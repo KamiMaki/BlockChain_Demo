@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="notify_array3">
+        <item>A店全店8折</item>
+        <item>A店三品8折</item>
+        <item>A店單品6折</item>
+        <item>A店單品8折</item>
+        <item>B店全店8折</item>
+        <item>B店單品8折</item>
+    </array>
+</resources>

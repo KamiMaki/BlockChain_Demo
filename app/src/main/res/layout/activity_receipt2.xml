@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Receipt2"
+    android:background="#000033">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="交易明細"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:layout_marginTop="50dp"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商品: 經典麻醬涼麵"
+        android:textColor="#FFEB3B"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="剩餘點數: "
+        android:textColor="#ffffff"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/a"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="50dp"
+        android:src="@mipmap/coin"
+        android:tint="#FFEB3B"/>
+    <ImageView
+        android:id="@+id/b"
+        android:layout_marginTop="355dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:src="@mipmap/coin"
+        android:tint="#FF9800"/>
+    <ImageView
+        android:id="@+id/c"
+        android:layout_marginTop="410dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:src="@mipmap/coin"
+        android:tint="#FF5722"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:text="A : 0     pt"
+        android:gravity="top"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="110dp"
+        android:textColor="#FFEB3B"
+        android:textSize="50dp" />
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:text="B : 50   pt"
+        android:gravity="top"
+        android:layout_marginTop="345dp"
+        android:layout_marginLeft="110dp"
+        android:textColor="#FF9800"
+        android:textSize="50dp" />
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:text="C : 170 pt"
+        android:gravity="top"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="110dp"
+        android:textColor="#FF5722"
+        android:textSize="50dp" />
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/backarrow"
+        android:background="@android:color/transparent"
+        android:tint="#ffffff"
+        android:scaleType="fitXY"
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="20dp"/>
+</RelativeLayout>

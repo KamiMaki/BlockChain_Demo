@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dragon.blockchain_demo">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".PointWeb"></activity>
+        <activity android:name=".Qrcode3" />
+        <activity android:name=".MissSwitchPoint" />
+        <activity android:name=".ShopList" />
+        <activity android:name=".ShopToItem" />
+        <activity android:name=".Qrcode2" />
+        <activity android:name=".Qrcode" />
+        <activity android:name=".ItemList" />
+        <activity android:name=".ItemConfig" />
+        <activity android:name=".Coupon" />
+        <activity android:name=".Receipt" />
+        <activity android:name=".SwitchPoint" />
+        <activity android:name=".Receipt2" />
+        <activity android:name=".Receipt3" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="notify_array">
+        <item>A -> B</item>
+        <item>A -> C</item>
+        <item>B -> A</item>
+        <item>B -> C</item>
+        <item>C -> A</item>
+        <item>C -> B</item>
+    </array>
+</resources>

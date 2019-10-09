@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Coupon"
+    android:background="#000033">
+    <ImageView
+        android:id="@+id/a"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:src="@mipmap/coin"
+        android:tint="#FFEB3B"/>
+    <ImageView
+        android:id="@+id/b"
+        android:layout_marginTop="55dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/coin"
+        android:tint="#FF9800"/>
+    <ImageView
+        android:id="@+id/c"
+        android:layout_marginTop="110dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/coin"
+        android:tint="#FF5722"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:text="A : 0 pt"
+        android:gravity="top"
+        android:layout_marginTop="-10dp"
+        android:layout_marginLeft="60dp"
+        android:textColor="#FFEB3B"
+        android:textSize="50dp" />
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:text="B : 50 pt"
+        android:gravity="top"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="60dp"
+        android:textColor="#FF9800"
+        android:textSize="50dp" />
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:text="C : 170 pt"
+        android:gravity="top"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="60dp"
+        android:textColor="#FF5722"
+        android:textSize="50dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="          優惠券          點數名稱      點數需求"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="240dp"
+        android:textSize="25sp"
+        android:textColor="#FFEB3B"
+        android:text="   A店全店8折       A         50 pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="275dp"
+        android:textSize="25sp"
+        android:textColor="#FFEB3B"
+        android:text="   A店三品8折       A         30 pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="310dp"
+        android:textSize="25sp"
+        android:textColor="#FFEB3B"
+        android:text="   A店單品6折       A         15 pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="345dp"
+        android:textSize="25sp"
+        android:textColor="#FFEB3B"
+        android:text="   A店單品8折       A         10 pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="380dp"
+        android:textSize="25sp"
+        android:textColor="#FF9800"
+        android:text="   B店全店8折       B         50 pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="415dp"
+        android:textSize="25dp"
+        android:textColor="#FF9800"
+        android:text="   B店單品8折       B         15 pt"/>
+    <Spinner
+        android:id="@+id/notify_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="475dp"
+        android:layout_marginLeft="10dp"
+        android:textAlignment="center"
+        android:background="#253174"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="數量:"
+        android:textColor="#ffffff"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="130dp"/>
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="465dp"
+        android:layout_marginLeft="190dp"
+        android:textSize="30sp"
+        android:text="1"
+        android:textColor="#FFEB3B"/>
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A: 50 pt"
+        android:textColor="#ff0000"
+        android:textSize="20dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="245dp"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="兌換"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="545dp"
+        android:layout_marginLeft="250dp"/>
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/backarrow"
+        android:background="@android:color/transparent"
+        android:tint="#ffffff"
+        android:scaleType="fitXY"
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="20dp"/>
+    <ImageButton
+        android:id="@+id/switching"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="540dp"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="150dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/switchpoint"/>
+</RelativeLayout>
