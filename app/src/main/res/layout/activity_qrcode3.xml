@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Qrcode3"
-    android:background="#000033">
+    android:background="@mipmap/background">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="品名: 優惠B"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:textSize="35sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"/>
@@ -26,7 +26,7 @@
         android:layout_height="50dp"
         android:src="@mipmap/backarrow"
         android:background="@android:color/transparent"
-        android:tint="#ffffff"
+        android:tint="#000033"
         android:scaleType="fitXY"
         android:layout_marginTop="540dp"
         android:layout_marginLeft="20dp"/>

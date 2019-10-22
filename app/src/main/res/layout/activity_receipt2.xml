@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Receipt2"
-    android:background="#000033">
+    android:background="@mipmap/background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,88 +12,100 @@
         android:gravity="center"
         android:text="交易明細"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:layout_marginTop="50dp"
-        android:textSize="40dp"/>
+        android:textSize="40sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="商品: 經典麻醬涼麵"
-        android:textColor="#FFEB3B"
-        android:layout_centerHorizontal="true"
+        android:text="商品"
+        android:textColor="#000033"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="130dp"
-        android:textSize="40dp"/>
+        android:textSize="35sp"/>
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:text="經典麻醬涼麵"
+        android:textColor="#000033"
+        android:textSize="30sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:text="剩餘點數: "
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:layout_marginTop="250dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginLeft="30dp"/>
 
     <ImageView
         android:id="@+id/a"
         android:layout_width="50dp"
         android:layout_height="52dp"
         android:layout_marginTop="300dp"
-        android:layout_marginLeft="50dp"
-        android:src="@mipmap/coin"
-        android:tint="#FFEB3B"/>
+        android:layout_marginLeft="70dp"
+        android:src="@mipmap/carrefour"/>
     <ImageView
         android:id="@+id/b"
         android:layout_marginTop="355dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:src="@mipmap/coin"
-        android:tint="#FF9800"/>
+        android:layout_marginLeft="70dp"
+        android:src="@mipmap/b_and_q" />
     <ImageView
         android:id="@+id/c"
         android:layout_marginTop="410dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:src="@mipmap/coin"
-        android:tint="#FF5722"/>
+        android:layout_marginLeft="70dp"
+        android:src="@mipmap/costco" />
 
     <TextView
         android:layout_width="250dp"
         android:layout_height="65dp"
-        android:text="A : 0     pt"
-        android:gravity="top"
-        android:layout_marginTop="290dp"
-        android:layout_marginLeft="110dp"
-        android:textColor="#FFEB3B"
-        android:textSize="50dp" />
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="65dp"
-        android:text="B : 50   pt"
-        android:gravity="top"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="345dp"
-        android:layout_marginLeft="110dp"
-        android:textColor="#FF9800"
+        android:gravity="top"
+        android:text="  : 50   pt"
+        android:textColor="#000033"
         android:textSize="50dp" />
+
     <TextView
         android:layout_width="250dp"
         android:layout_height="65dp"
-        android:text="C : 170 pt"
-        android:gravity="top"
-        android:layout_marginTop="400dp"
         android:layout_marginLeft="110dp"
-        android:textColor="#FF5722"
+        android:layout_marginTop="400dp"
+        android:gravity="top"
+        android:text="  : 170 pt"
+        android:textColor="#000033"
         android:textSize="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="300dp"
+        android:gravity="top"
+        android:text="  : 0     pt"
+        android:textColor="#000033"
+        android:textSize="30sp" />
+
     <ImageButton
         android:id="@+id/button"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@mipmap/backarrow"
-        android:background="@android:color/transparent"
-        android:tint="#ffffff"
-        android:scaleType="fitXY"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="540dp"
-        android:layout_marginLeft="20dp"/>
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/backarrow"
+        android:tint="#000033" />
 </RelativeLayout>

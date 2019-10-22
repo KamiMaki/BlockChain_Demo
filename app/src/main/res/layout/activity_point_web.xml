@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000033"
+    android:background="@mipmap/background"
     tools:context=".PointWeb">
 
     <ImageButton
@@ -14,7 +14,7 @@
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@mipmap/backarrow"
-        android:tint="#ffffff"
+        android:tint="#000033"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
@@ -23,11 +23,11 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="兌換"
-        android:textColor="#FFFFFF"
+        android:textColor="#000033"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,5 +45,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"/>
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#000033"/>
 </android.support.constraint.ConstraintLayout>

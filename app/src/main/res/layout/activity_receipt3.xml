@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000033"
+    android:background="@mipmap/background"
     tools:context=".Receipt3">
 
     <ImageButton
@@ -16,7 +16,7 @@
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@mipmap/backarrow"
-        android:tint="#ffffff"
+        android:tint="#000033"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -29,14 +29,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="商品 A : 2 份"
-        android:textColor="#FFEB3B"
-        android:textSize="30dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintHorizontal_bias="0.715"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <TextView
         android:id="@+id/textView31"
@@ -44,14 +44,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="商品 B : 1 份"
-        android:textColor="#FFEB3B"
-        android:textSize="30dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintHorizontal_bias="0.712"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintVertical_bias="0.289" />
 
     <TextView
         android:id="@+id/textView32"
@@ -59,21 +59,21 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="優惠 A : 1 份"
-        android:textColor="#FFEB3B"
-        android:textSize="30dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintHorizontal_bias="0.718"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="剩餘點數: "
-        android:textColor="#ffffff"
+        android:text="剩餘點數"
+        android:textColor="#000033"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="A : 0 pt"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="B : 271 pt"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="C : 2000 pt"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,28 +127,13 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <TextView
-        android:id="@+id/textView36"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="D : 31415 pt"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="交易明細"
-        android:textColor="#ffffff"
-        android:textSize="40dp"
+        android:textColor="#000033"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

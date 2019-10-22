@@ -4,43 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000033"
+    android:background="@mipmap/background"
     tools:context=".ShopList">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="300dp"
-        android:layout_height="200px"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="A         點數兌換平台"
-        android:textColor="#FFFFFF"
-        android:textSize="100px"
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/backarrow"
+        android:tint="#000033"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/current_pt"
         android:layout_width="wrap_content"
-        android:layout_height="200px"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="我的點數:  1000 pt"
-        android:textColor="#FFFFFF"
-        android:textSize="80px"
+        android:text="我的點數:  900 pt"
+        android:textColor="#000033"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+        app:layout_constraintVertical_bias="0.929" />
 
+    <TextView
+        android:id="@+id/use_pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="使用點數:  0 pt"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
+
+    <TextView
+        android:id="@+id/current_pt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="家樂福"
+        android:textColor="#575656"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="400dp"
@@ -66,8 +98,9 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:text="商品"
-                    android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textColor="#000033"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -77,20 +110,21 @@
 
                 <ImageView
                     android:id="@+id/item1"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/cart" />
+                    android:src="@mipmap/item_1" />
 
                 <ImageView
                     android:id="@+id/item2"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/cart" />
+                    android:src="@mipmap/item_2" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,18 +134,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="品名: 商品 A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:text="優活抽取式衛生紙"
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="品名: 商品 B"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:layout_marginLeft="35dp"
+                    android:text="阿舍食堂外省乾麵"
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,16 +157,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 400 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="76dp"
                     android:text="售價: 350 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -141,23 +176,23 @@
 
                 <TextView
                     android:id="@+id/amount1"
-                    android:layout_width="50pt"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="57dp"
+                    android:layout_marginLeft="50dp"
                     android:textAlignment="center"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/amount2"
-                    android:layout_width="50pt"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="110dp"
                     android:textAlignment="center"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -166,18 +201,18 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/cart" />
+                    android:src="@mipmap/item_3" />
 
                 <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/cart" />
+                    android:src="@mipmap/item_4" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -189,16 +224,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 商品 C"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 商品 D"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -210,16 +245,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 400 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 1000 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -233,8 +268,8 @@
                     android:layout_marginLeft="57dp"
                     android:textAlignment="center"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="100dp"
@@ -242,8 +277,8 @@
                     android:layout_marginLeft="70dp"
                     android:textAlignment="center"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -252,17 +287,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/cart" />
+                    android:tint="#000033"
+                    android:src="@mipmap/item_5" />
 
                 <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
+                    android:tint="#000033"
                     android:src="@drawable/cart" />
             </LinearLayout>
             <LinearLayout
@@ -275,16 +312,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 商品 E"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 商品 F"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -296,16 +333,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 600 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 1200 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -318,99 +355,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="100dp"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/cart" />
-
-                <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/cart" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="品名: 商品 G"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="品名: 商品 H"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="售價: 999 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="售價: 9999 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -423,8 +377,9 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:text="優惠券"
-                    android:textColor="#FFFFFF"
-                    android:textSize="30sp" />
+                    android:textColor="#000033"
+                    android:textSize="30sp"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <LinearLayout
@@ -458,16 +413,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 優惠 A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 優惠 B"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -479,16 +434,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 200 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 299 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -502,8 +457,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/amount_c2"
@@ -511,8 +466,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="100dp"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -521,15 +476,15 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
                     android:src="@mipmap/coupon" />
 
                 <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:src="@mipmap/coupon" />
@@ -544,16 +499,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 優惠 C"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="品名: 優惠 D"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -565,16 +520,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 350 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
                     android:text="售價: 1000 pt"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -587,55 +542,36 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="100dp"
                     android:text="數量: 0"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#000033"
+                    android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
-
-
-    <TextView
-        android:id="@+id/use_pt"
-        android:layout_width="wrap_content"
-        android:layout_height="200px"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="使用點數:  0 pt"
-        android:textColor="#FFFFFF"
-        android:textSize="80px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.933" />
-
     <TextView
         android:id="@+id/refresh"
         android:layout_width="wrap_content"
-        android:layout_height="200px"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="重置"
-        android:textColor="#FFFFFF"
-        android:textSize="40px"
+        android:textColor="#000033"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.992" />
+        app:layout_constraintVertical_bias="0.894" />
 
     <TextView
         android:id="@+id/confirm"
@@ -643,16 +579,103 @@
         android:layout_height="200px"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
+        android:background="#003065"
         android:gravity="center"
         android:text="確認兌換"
-        android:textColor="#FFFFFF"
-        android:textSize="80px"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.933" />
+        app:layout_constraintVertical_bias="0.955" />
 
+
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="登出"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="切換帳號"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.374"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="hi,  Derran !!"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="修改個人資料"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="match_parent"
+        android:layout_height="160px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="iTravelChain"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#0072e3"/>
 </android.support.constraint.ConstraintLayout>

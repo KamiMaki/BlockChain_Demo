@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ItemConfig"
-    android:background="#000033">
+    android:background="@mipmap/background">
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -16,26 +16,28 @@
         android:id="@+id/detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="需要A點: 150 pt\n\n您有A點: 95 pt"
-        android:textColor="#ffffff"
+        android:text="需要A點: 150 pt"
+        android:textColor="#000033"
         android:textSize="20sp"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="35dp"/>
+
     <TextView
         android:id="@+id/alert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="132dp"
         android:text="不足A點: 55 pt"
         android:textColor="#FF0000"
-        android:textSize="20sp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="132dp"/>
+        android:textSize="20sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="200dp"
         android:textSize="20sp"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:text="    點數         標的物                     匯率"/>
     <TextView
         android:layout_width="match_parent"
@@ -57,7 +59,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="數量:"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:layout_marginTop="400dp"
         android:layout_marginLeft="20dp"/>
     <EditText
@@ -73,29 +75,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total: 150 pt"
-        android:textColor="#ffffff"
+        android:textColor="#000033"
         android:textSize="23dp"
         android:layout_marginTop="400dp"
         android:layout_marginLeft="205dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="點數交換:"
-        android:textColor="#ffffff"
-        android:layout_marginTop="460dp"
-        android:layout_marginLeft="20dp"/>
-    <ImageButton
-        android:id="@+id/switching"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:textSize="20sp"
-        android:textColor="#ffffff"
-        android:layout_marginTop="452dp"
-        android:background="@android:color/transparent"
-        android:layout_marginLeft="200dp"
-        android:scaleType="fitXY"
-        android:src="@mipmap/switchpoint"/>
+
     <Spinner
         android:id="@+id/notify_spinner"
         android:layout_width="wrap_content"
@@ -107,33 +91,26 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:text="兌換"
-        android:textSize="30dp"
-        android:textColor="#ffffff"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="540dp"
-        android:layout_marginLeft="250dp"/>
+        android:background="#003065"
+        android:text="確認兌換"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
     <ImageButton
         android:id="@+id/button2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@mipmap/backarrow"
         android:background="@android:color/transparent"
-        android:tint="#ffffff"
+        android:tint="#000033"
         android:scaleType="fitXY"
         android:layout_marginTop="540dp"
         android:layout_marginLeft="20dp"/>
-    <ImageButton
-        android:id="@+id/question"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@mipmap/question_mark"
-        android:tint="#ffffff"
-        android:scaleType="fitXY"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="460dp"
-        android:layout_marginLeft="290dp"/>
 
 </RelativeLayout>

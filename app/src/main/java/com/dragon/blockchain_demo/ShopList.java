@@ -12,13 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ShopList extends AppCompatActivity {
-    ImageView item1, item2, coupon1, coupon2;
+    ImageView item1, item2, coupon1, coupon2, back;
     TextView amount1, amount2, amount_c1, amount_c2, current_pt, use_pt, confirm, refresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_list);
+        back = findViewById(R.id.button);
         item1 = findViewById(R.id.item1);
         item2 = findViewById(R.id.item2);
         coupon1 = findViewById(R.id.coupon1);
@@ -113,7 +114,7 @@ public class ShopList extends AppCompatActivity {
                 int current_points = Integer.parseInt(current_pt.getText().toString().substring(7,current_pt.getText().toString().indexOf(" pt")));
                 if (points > current_points){
                     AlertDialog.Builder builder = new AlertDialog.Builder(ShopList.this);
-                    builder.setMessage("您的 A 點不足!!");
+                    builder.setMessage("您的 家樂福 點數不足!!");
                     builder.setPositiveButton("兌換點數", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -138,6 +139,12 @@ public class ShopList extends AppCompatActivity {
                 }
 
 
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ShopList.this, ShopToItem.class));
             }
         });
     }

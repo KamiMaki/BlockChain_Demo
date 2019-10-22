@@ -1,159 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SwitchPoint"
-    android:background="#000033">
-    <ImageView
-        android:id="@+id/a"
-        android:layout_width="50dp"
-        android:layout_height="52dp"
-        android:src="@mipmap/coin"
-        android:tint="#FFEB3B"/>
-    <ImageView
-        android:id="@+id/b"
-        android:layout_marginTop="55dp"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/coin"
-        android:tint="#FF9800"/>
-    <ImageView
-        android:id="@+id/c"
-        android:layout_marginTop="110dp"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/coin"
-        android:tint="#FF5722"/>
+    android:background="@mipmap/background"
+    tools:context=".SwitchPoint">
 
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="65dp"
-        android:text="A : 100 pt"
-        android:gravity="top"
-        android:layout_marginTop="-10dp"
-        android:layout_marginLeft="60dp"
-        android:textColor="#FFEB3B"
-        android:textSize="50dp" />
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="65dp"
-        android:text="B : 150 pt"
-        android:gravity="top"
-        android:layout_marginTop="45dp"
-        android:layout_marginLeft="60dp"
-        android:textColor="#FF9800"
-        android:textSize="50dp" />
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="65dp"
-        android:text="C : 170 pt"
-        android:gravity="top"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="60dp"
-        android:textColor="#FF5722"
-        android:textSize="50dp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="200dp"
-        android:textSize="20sp"
-        android:textColor="#ffffff"
-        android:text="    點數         標的物                     匯率"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="240dp"
-        android:textSize="35sp"
-        android:textColor="#FFEB3B"
-        android:text="   A   ->   B               2"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="275dp"
-        android:textSize="35sp"
-        android:textColor="#FFEB3B"
-        android:text="   A   ->   C               3"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="310dp"
-        android:textSize="35sp"
-        android:textColor="#FF9800"
-        android:text="   B   ->   A               0.5"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="345dp"
-        android:textSize="35sp"
-        android:textColor="#FF9800"
-        android:text="   B   ->   C               1.5"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="380dp"
-        android:textSize="35sp"
-        android:textColor="#FF5722"
-        android:text="   C   ->   A               0.33"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="415dp"
-        android:textSize="35dp"
-        android:textColor="#FF5722"
-        android:text="   C   ->   B               0.66"/>
-    <Spinner
-        android:id="@+id/notify_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
-        android:layout_marginLeft="30dp"
-        android:textAlignment="center"
-        android:background="#253174"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="B點:"
-        android:textColor="#ffffff"
-        android:layout_marginTop="480dp"
-        android:layout_marginLeft="120dp"/>
-    <EditText
-        android:id="@+id/amount"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="465dp"
-        android:layout_marginLeft="175dp"
-        android:textSize="30sp"
-        android:text="10"
-        android:textColor="#FFEB3B"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="扣除A點: 5 pt"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:layout_marginTop="480dp"
-        android:layout_marginLeft="230dp"/>
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
+        android:background="#003065"
         android:text="兌換"
-        android:textSize="30dp"
         android:textColor="#ffffff"
-        android:layout_marginTop="530dp"
-        android:layout_marginLeft="250dp"/>
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:text="10"
+        android:textColor="#000033"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
+
     <ImageButton
         android:id="@+id/button2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@mipmap/backarrow"
         android:background="@android:color/transparent"
-        android:tint="#ffffff"
         android:scaleType="fitXY"
-        android:layout_marginTop="540dp"
-        android:layout_marginLeft="20dp"/>
-</RelativeLayout>
+        android:src="@mipmap/backarrow"
+        android:tint="#000033"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Spinner
+        android:id="@+id/notify_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#253174"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="特力屋 : 800 pt"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.208" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="家樂福 : 900 pt"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="好市多 : 850 pt"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="        點數                 標的物           匯率"
+        android:textColor="#000033"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="   家樂福    ->   特力屋          2"
+        android:textColor="#000033"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="   家樂福    ->   好市多          3"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:text="   特力屋    ->   家樂福          0.5"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="   特力屋    ->   好市多          1.5"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="   好市多    ->   家樂福          0.33"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="   好市多    ->   特力屋          0.66"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.743" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="特力屋:"
+        android:textColor="#000033"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扣除家樂福: 5 pt"
+        android:textColor="#000033"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845" />
+</android.support.constraint.ConstraintLayout>
