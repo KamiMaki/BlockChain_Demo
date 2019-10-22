@@ -18,7 +18,7 @@ public class ItemConfig extends AppCompatActivity {
     Spinner notify;
     Button bt2;
     ImageButton bt;
-    ImageButton bt3, question;
+    ImageButton bt3;
     TextView detail, alert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,6 @@ public class ItemConfig extends AppCompatActivity {
         bt3 = findViewById(R.id.button2);
         detail = findViewById(R.id.detail);
         alert = findViewById(R.id.alert);
-        question = findViewById(R.id.question);
         ArrayAdapter<CharSequence> nAdapter = ArrayAdapter.createFromResource(this, R.array.notify_array2, R.layout.spinner_item);
         nAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         notify.setAdapter(nAdapter);
@@ -73,20 +72,6 @@ public class ItemConfig extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ItemConfig.this, MainActivity.class));
-            }
-        });
-        question.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(ItemConfig.this);
-                builder.setTitle("現有點數");
-                builder.setMessage("A點: 95 pt\nB點: 160 pt\nC點: 170 pt");
-                builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                builder.show();
             }
         });
     }
