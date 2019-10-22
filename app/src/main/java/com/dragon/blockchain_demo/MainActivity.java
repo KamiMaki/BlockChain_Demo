@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton pointswitch, shop, Item, check;
+    ImageButton pointswitch, shop, Item, check,gps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         shop = findViewById(R.id.shop);
         Item = findViewById(R.id.coupon);
         check = findViewById(R.id.check);
+        gps = findViewById(R.id.gps);
         pointswitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ItemList.class));
+            }
+        });
+        gps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,ItemList.class));
