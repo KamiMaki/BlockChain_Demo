@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         gps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,ItemList.class));
+                startActivity(new Intent(MainActivity.this,GoogleMap.class));
             }
         });
     }
