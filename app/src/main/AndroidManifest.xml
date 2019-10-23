@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Loading"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Login" />
         <activity android:name=".PointWeb" />
         <activity android:name=".Qrcode3" />
         <activity android:name=".MissSwitchPoint" />
@@ -26,7 +26,7 @@
         <activity android:name=".SwitchPoint" />
         <activity android:name=".Receipt2" />
         <activity android:name=".Receipt3" />
-        <activity android:name=".Login">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
