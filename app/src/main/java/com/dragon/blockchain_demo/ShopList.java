@@ -118,7 +118,7 @@ public class ShopList extends AppCompatActivity {
                     builder.setPositiveButton("兌換點數", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            startActivity(new Intent(ShopList.this, PointWeb.class));
+                            startActivity(new Intent(ShopList.this, MissSwitchPoint.class));
                         }
                     });
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
