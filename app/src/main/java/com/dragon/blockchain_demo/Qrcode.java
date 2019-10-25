@@ -18,7 +18,7 @@ public class Qrcode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 inqrcode = true;
-                startActivity(new Intent(Qrcode.this,MainActivity.class));
+                startActivity(new Intent(Qrcode.this,ItemList.class));
             }
         });
     }

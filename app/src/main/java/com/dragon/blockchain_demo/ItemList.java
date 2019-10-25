@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class ItemList extends AppCompatActivity {
-    ImageButton back, image1, image2, image3;
+    ImageButton back;
     TextView buy1, buy2, text21, text22, text12, text11, buy3, text31, text32;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +24,20 @@ public class ItemList extends AppCompatActivity {
         text22 = findViewById(R.id.text22);
         text31 = findViewById(R.id.text31);
         text32 = findViewById(R.id.text32);
-        image1 = findViewById(R.id.image1);
-        image2 = findViewById(R.id.image2);
-        image3 = findViewById(R.id.image3);
         if (Qrcode2.inqrcode == true){
             text21.setVisibility(View.INVISIBLE);
             text22.setVisibility(View.INVISIBLE);
             buy2.setVisibility(View.INVISIBLE);
-            image2.setVisibility(View.INVISIBLE);
         }
         if (Qrcode.inqrcode == true){
             text12.setVisibility(View.INVISIBLE);
             text11.setVisibility(View.INVISIBLE);
             buy1.setVisibility(View.INVISIBLE);
-            image1.setVisibility(View.INVISIBLE);
         }
         if (Qrcode3.inqrcode == true){
             text31.setVisibility(View.INVISIBLE);
             text32.setVisibility(View.INVISIBLE);
             buy3.setVisibility(View.INVISIBLE);
-            image3.setVisibility(View.INVISIBLE);
         }
 
         buy1.setOnClickListener(new View.OnClickListener() {

@@ -8,9 +8,4 @@
         <item name="colorAccent">#2196F3</item>
     </style>
 
-    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:positiveButtonText">#0000CD</item>
-        <item name="android:negativeButtonText">#ccffff</item>
-        <item name="android:background">#ccffff</item>
-    </style>
 </resources>

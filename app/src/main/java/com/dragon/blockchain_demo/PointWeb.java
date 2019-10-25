@@ -1,6 +1,5 @@
 package com.dragon.blockchain_demo;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Point;
@@ -26,8 +25,7 @@ public class PointWeb extends AppCompatActivity {
         WebView web_view;
         web_view = findViewById(R.id.web_view);
         web_view.getSettings().setJavaScriptEnabled(true);
-        web_view.addJavascriptInterface(new WebAppInterface(PointWeb.this), "Android");
-        web_view.loadUrl("http://d66ce504.ngrok.io/");
+        web_view.loadUrl("http://26715fd1.ngrok.io/");
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,4 +54,3 @@ public class PointWeb extends AppCompatActivity {
         });
     }
 }
-

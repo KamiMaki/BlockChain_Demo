@@ -1,436 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background"
-    tools:context=".ItemConfig">
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="400px"
-        android:layout_height="200px"
-        android:layout_alignParentBottom="true"
-        android:background="#003065"
-        android:text="確認兌換"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
-
-    <EditText
-        android:id="@+id/amount"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:text="1"
-        android:textColor="#000033"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
-
-    <ImageButton
-        android:id="@+id/button2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@mipmap/backarrow"
-        android:tint="#000033"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
+    tools:context=".ItemConfig"
+    android:background="@mipmap/background">
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@mipmap/item"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
-
-    <TableLayout
-
-        android:layout_width="360dp"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:stretchColumns="0,1,2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68"
-        android:background="#585858">
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="0.5dp"
-            android:layout_weight="1"
-            android:background="#003065">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:text=" 點數 "
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:text=" 標的物 "
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:text=" 匯率 "
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="0.5dp"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 特力屋 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 家樂福 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 0.5 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="0.5dp"
-            android:layout_weight="1"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 好市多 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 家樂福 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 0.33 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-        </TableRow>
-    </TableLayout>
-
-
-    <Spinner
-        android:id="@+id/notify_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#253174"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
-
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
     <TextView
-        android:id="@+id/textView36"
-        android:layout_width="match_parent"
-        android:layout_height="160px"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="#0072e3"
-        android:gravity="center"
-        android:text="iTravelChain"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="登出"
-        android:textColor="#000033"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="切換帳號"
-        android:textColor="#000033"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.374"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="hi,  Akcess !!"
-        android:textColor="#000033"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="修改個人資料"
-        android:textColor="#000033"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
-
-    <TextView
-        android:id="@+id/alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="不足A點: 55 pt"
-        android:textColor="#FF0000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="數量:"
-        android:textColor="#000033"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.726"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:text=" 特力屋 : 160 pt"
-        android:textColor="#000033"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
-
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:text=" 好市多 : 170 pt"
-        android:textColor="#000033"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
-
-    <TextView
-        android:id="@+id/textView42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:text=" 家樂福 : 95   pt"
-        android:textColor="#000033"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.841"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
-
-    <ImageView
-        android:id="@+id/a2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@mipmap/carrefour"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343" />
-
-    <ImageView
-        android:id="@+id/c2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@mipmap/costco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
-
-    <ImageView
-        android:id="@+id/b2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@mipmap/b_and_q"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
-
-    <TextView
-        android:id="@+id/text4"
+        android:id="@+id/detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="需要A點: 150 pt"
         android:textColor="#000033"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
-
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="35dp"/>
 
     <TextView
-        android:id="@+id/detail"
+        android:id="@+id/alert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="所持點數: "
-        android:textColor="#000033"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.346" />
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="132dp"
+        android:text="不足A點: 55 pt"
+        android:textColor="#FF0000"
+        android:textSize="20sp" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:textSize="20sp"
+        android:textColor="#000033"
+        android:text="    點數         標的物                     匯率"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="240dp"
+        android:textSize="35sp"
+        android:textColor="#FFEB3B"
+        android:text="   B   ->   A               0.5"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="315dp"
+        android:textSize="35sp"
+        android:textColor="#FFEB3B"
+        android:text="   C   ->   A               0.33"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="數量:"
+        android:textColor="#000033"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="20dp"/>
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="100dp"
+        android:textSize="30sp"
+        android:text="1"
+        android:textColor="#FFEB3B"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: 150 pt"
+        android:textColor="#000033"
+        android:textSize="23dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="205dp"/>
+
+    <Spinner
+        android:id="@+id/notify_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="120dp"
+        android:textAlignment="center"
+        android:background="#253174"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="540dp"
+        android:background="#003065"
+        android:text="確認兌換"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/backarrow"
+        android:background="@android:color/transparent"
+        android:tint="#000033"
+        android:scaleType="fitXY"
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="20dp"/>
+
+</RelativeLayout>

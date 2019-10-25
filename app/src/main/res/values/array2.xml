@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="notify_array2">
-        <item>特力屋 -> 家樂福</item>
-        <item>好市多 -> 家樂福</item>
+        <item>B -> A</item>
+        <item>C -> A</item>
     </array>
 </resources>

@@ -6,19 +6,15 @@ import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class ShopList extends AppCompatActivity {
     ImageView item1, item2, coupon1, coupon2, back;
     TextView amount1, amount2, amount_c1, amount_c2, current_pt, use_pt, confirm, refresh;
-    RadioButton radio;
-    RadioGroup radioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +32,6 @@ public class ShopList extends AppCompatActivity {
         use_pt = findViewById(R.id.use_pt);
         confirm = findViewById(R.id.confirm);
         refresh = findViewById(R.id.refresh);
-//        home = findViewById(R.id.radioButton);
-//        take = findViewById(R.id.radioButton2);
-        radioGroup = findViewById(R.id.radioGroup);
         item1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,11 +96,11 @@ public class ShopList extends AppCompatActivity {
                 amount_c1.setText("數量: 0");
                 amount_c2.setText("數量: 0");
                 use_pt.setText("使用點數:  0 pt");
-                use_pt.setTextColor(Color.parseColor("#000033"));
-                amount1.setTextColor(Color.parseColor("#000033"));
-                amount2.setTextColor(Color.parseColor("#000033"));
-                amount_c1.setTextColor(Color.parseColor("#000033"));
-                amount_c2.setTextColor(Color.parseColor("#000033"));
+                use_pt.setTextColor(Color.parseColor("#FFFFFF"));
+                amount1.setTextColor(Color.parseColor("#FFFFFF"));
+                amount2.setTextColor(Color.parseColor("#FFFFFF"));
+                amount_c1.setTextColor(Color.parseColor("#FFFFFF"));
+                amount_c2.setTextColor(Color.parseColor("#FFFFFF"));
                 item1.setAlpha(1.0f);
                 item2.setAlpha(1.0f);
                 coupon1.setAlpha(1.0f);
@@ -125,7 +118,7 @@ public class ShopList extends AppCompatActivity {
                     builder.setPositiveButton("兌換點數", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            startActivity(new Intent(ShopList.this, MissSwitchPoint.class));
+                            startActivity(new Intent(ShopList.this, PointWeb.class));
                         }
                     });
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -137,21 +130,13 @@ public class ShopList extends AppCompatActivity {
 
                 }
                 else {
-                    int selectedID = radioGroup.getCheckedRadioButtonId();
-                    radio = findViewById(selectedID);
-                    if (radio.getText().equals("送到我家")){
-                        startActivity(new Intent(ShopList.this, Receipt3.class));
+                    try {
+                        Thread.sleep(2160);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                    else {
-                        startActivity(new Intent(ShopList.this, Qrcode.class));
-                    }
-//                    try {
-//                        Thread.sleep(2160);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                    startActivity(new Intent(ShopList.this, Receipt3.class));
-                                    }
+                    startActivity(new Intent(ShopList.this, Receipt3.class));
+                }
 
 
             }
