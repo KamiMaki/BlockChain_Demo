@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/background"
-    tools:context=".ShopList">
+    tools:context=".ShopList2">
+
 
 
     <ImageButton
@@ -23,6 +24,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <TextView
+        android:id="@+id/current_pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="我的點數:  900 pt"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.929" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -65,7 +83,7 @@
                     android:layout_height="110dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_1" />
+                    android:src="@mipmap/hotel_1" />
 
                 <ImageView
                     android:id="@+id/item2"
@@ -73,7 +91,7 @@
                     android:layout_height="110dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_2" />
+                    android:src="@mipmap/hotel_2" />
             </LinearLayout>
 
             <LinearLayout
@@ -85,15 +103,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="金礦巧克力"
+                    android:text="四人房－附私人衛浴"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:text="台灣水果乾"
+                    android:layout_marginLeft="20dp"
+                    android:text="10床女性住宿房的\n一張單人床"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -153,17 +171,17 @@
 
                 <ImageView
                     android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_height="115dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_3" />
+                    android:src="@mipmap/hotel_3" />
 
                 <ImageView
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_4" />
+                    android:src="@mipmap/hotel_4" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -174,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="黑糖蜂巢糕"
+                    android:text="多人混合房"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
@@ -182,7 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
-                    android:text="一日散命散"
+                    android:text="8床混合住宿房的\n一張單人床"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -358,31 +376,6 @@
 
     </ScrollView>
 
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.30"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" >
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:text="送到我家" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:text="現場拿" />
-    </RadioGroup>
-
     <TextView
         android:id="@+id/use_pt"
         android:layout_width="150dp"
@@ -392,27 +385,10 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.907" />
-
-    <TextView
-        android:id="@+id/current_pt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="我的點數:  900 pt"
-        android:textColor="#000033"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.353"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.957" />
 
     <TextView
         android:id="@+id/current_pt3"
@@ -420,15 +396,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:text="kkday"
+        android:text="飯店"
         android:textColor="#575656"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.9" />
 
     <TextView
         android:id="@+id/refresh"
@@ -447,7 +423,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.894" />
 
-
     <TextView
         android:id="@+id/confirm"
         android:layout_width="400px"
@@ -465,6 +440,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.955" />
+
+
 
     <TextView
         android:id="@+id/textView23"
@@ -540,7 +517,6 @@
         android:layout_height="160px"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#0072e3"
         android:gravity="center"
         android:text="iTravelChain"
         android:textColor="#ffffff"
@@ -550,5 +526,6 @@
         app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#0072e3"/>
 </android.support.constraint.ConstraintLayout>
