@@ -5,56 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GoogleMap">
-
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/mapFragment"
         class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="83dp"
-        android:layout_height="77dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitCenter"
-        android:src="@drawable/tour"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="83dp"
-        android:layout_height="77dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitCenter"
-        android:src="@drawable/eat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="83dp"
-        android:layout_height="77dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitCenter"
-        android:src="@drawable/bed"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958" />
-
-
+        android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>

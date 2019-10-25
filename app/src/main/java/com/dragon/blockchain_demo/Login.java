@@ -16,7 +16,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        startActivity(new Intent(Login.this, GoogleMap.class));
         account = findViewById(R.id.account);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
@@ -25,7 +24,6 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String ac = account.getText().toString();
                 String pw = password.getText().toString();
-
                 if (ac.equals("dragon")&& pw.equals(""))
                     startActivity(new Intent(Login.this, Loading.class));
                 else {
