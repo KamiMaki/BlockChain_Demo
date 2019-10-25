@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dragon.blockchain_demo">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,9 +14,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD3FAtc8B4KBl87ELlMzSfIigOD_21oEMw" />
         <activity android:name=".GoogleMap"></activity>
+
+        <activity android:name=".ShopList2"></activity>
+
         <activity android:name=".Loading" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".PointWeb" />
+
+        <activity android:name=".GoogleMap" />
+
+        <activity android:name=".Login" />
         <activity android:name=".Qrcode3" />
         <activity android:name=".MissSwitchPoint" />
         <activity android:name=".ShopList" />
@@ -32,13 +36,18 @@
         <activity android:name=".SwitchPoint" />
         <activity android:name=".Receipt2" />
         <activity android:name=".Receipt3" />
-        <activity android:name=".Login">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCuXZqb92sFHiLmxCvdzkcMcHPVejTr-AY" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
