@@ -89,7 +89,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="hi,  Derran !!"
+        android:text="hi,  Akcess !!"
         android:textColor="#000033"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"

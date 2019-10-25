@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dragon.blockchain_demo">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,15 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Loading"></activity>
-        <activity android:name=".Login" />
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCuXZqb92sFHiLmxCvdzkcMcHPVejTr-AY" />
-        <activity android:name=".GoogleMap"></activity>
+        <activity android:name=".ShopList2"></activity>
         <activity android:name=".Loading" />
-        <activity android:name=".Login" />
         <activity android:name=".PointWeb" />
+
+        <activity android:name=".GoogleMap" />
+
+        <activity android:name=".Login" />
         <activity android:name=".Qrcode3" />
         <activity android:name=".MissSwitchPoint" />
         <activity android:name=".ShopList" />
@@ -41,6 +37,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCuXZqb92sFHiLmxCvdzkcMcHPVejTr-AY" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
