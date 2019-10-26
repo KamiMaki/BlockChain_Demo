@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="全館九折"
+        android:text="四人房－附私人衛浴"
         android:textColor="#000033"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"

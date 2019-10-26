@@ -14,11 +14,12 @@ public class Receipt2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receipt2);
-        Toast.makeText(Receipt2.this,"商品兌換券已儲存!", Toast.LENGTH_LONG).show();
         bt = findViewById(R.id.button);
+        Toast.makeText(Receipt2.this,"點數兌換成功!", Toast.LENGTH_LONG).show();
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(Receipt2.this,"商品已儲存至優惠券!", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(Receipt2.this, MainActivity.class));
             }
         });

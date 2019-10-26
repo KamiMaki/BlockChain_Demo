@@ -17,8 +17,7 @@ public class Qrcode2 extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inqrcode = true;
-                startActivity(new Intent(Qrcode2.this,ItemList.class));
+                startActivity(new Intent(Qrcode2.this,Receipt2.class));
             }
         });
     }

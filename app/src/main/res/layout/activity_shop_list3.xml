@@ -5,24 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/background"
-    tools:context=".ShopList">
-
-
-    <ImageButton
-        android:id="@+id/button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@mipmap/backarrow"
-        android:tint="#000033"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+    tools:context=".ShopList3">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -62,10 +45,10 @@
                 <ImageView
                     android:id="@+id/item1"
                     android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_height="114dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_1" />
+                    android:src="@mipmap/food_1" />
 
                 <ImageView
                     android:id="@+id/item2"
@@ -73,7 +56,7 @@
                     android:layout_height="110dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_2" />
+                    android:src="@mipmap/food_2" />
             </LinearLayout>
 
             <LinearLayout
@@ -85,15 +68,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="金礦巧克力"
+                    android:text="雙色經典芋圓"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:text="台灣水果乾"
+                    android:layout_marginLeft="68dp"
+                    android:text="粉圓芋圓"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -107,15 +90,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="售價: 40 pt"
+                    android:text="售價: 20 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="84dp"
-                    android:text="售價: 35 pt"
+                    android:layout_marginLeft="83dp"
+                    android:text="售價: 20 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -156,14 +139,14 @@
                     android:layout_height="110dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_3" />
+                    android:src="@mipmap/food_3" />
 
                 <ImageView
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/newitem_4" />
+                    android:src="@mipmap/food_4" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -174,15 +157,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="黑糖蜂巢糕"
+                    android:text="特製雙色芋圓"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="84dp"
-                    android:text="一日散命散"
+                    android:layout_marginLeft="68dp"
+                    android:text="紅豆芋圓"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -195,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="售價: 40 pt"
+                    android:text="售價: 20 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
@@ -203,7 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="85dp"
-                    android:text="售價: 50 pt"
+                    android:text="售價: 20 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -225,7 +208,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="112dp"
                     android:textAlignment="center"
                     android:text="數量: 0"
                     android:textColor="#000033"
@@ -318,15 +301,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="售價: 200 pt"
+                    android:text="售價: 20 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:text="售價: 299 pt"
+                    android:layout_marginLeft="89dp"
+                    android:text="售價: 40 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -359,60 +342,21 @@
     </ScrollView>
 
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/backarrow"
+        android:tint="#000033"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" >
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:text="送到我家" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:text="現場拿" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/use_pt"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="使用點數:  0 pt"
-        android:textColor="#000033"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.907" />
-
-    <TextView
-        android:id="@+id/current_pt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="我的點數:  80 pt"
-        android:textColor="#000033"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/current_pt3"
@@ -425,10 +369,41 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.893" />
+
+    <TextView
+        android:id="@+id/current_pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="我的點數:  100 pt"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
+
+    <TextView
+        android:id="@+id/use_pt"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="使用點數:  0 pt"
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
         android:id="@+id/refresh"

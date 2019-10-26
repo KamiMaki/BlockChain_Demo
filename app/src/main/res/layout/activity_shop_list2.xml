@@ -32,12 +32,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="我的點數:  900 pt"
+        android:text="我的點數:  0 pt"
         android:textColor="#000033"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintHorizontal_bias="0.341"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.929" />
@@ -125,14 +125,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="售價: 400 pt"
+                    android:text="售價: 1400 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="76dp"
+                    android:layout_marginLeft="66dp"
                     android:text="售價: 350 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
@@ -221,7 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="75dp"
-                    android:text="售價: 1000 pt"
+                    android:text="售價: 800 pt"
                     android:textColor="#000033"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -396,12 +396,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:text="飯店"
+        android:text="途中。九份國際青年旅舍"
         android:textColor="#575656"
-        android:textSize="20sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9" />

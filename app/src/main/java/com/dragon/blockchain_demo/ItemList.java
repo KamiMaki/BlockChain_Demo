@@ -33,13 +33,13 @@ public class ItemList extends AppCompatActivity {
             buy2.setVisibility(View.INVISIBLE);
             image2.setVisibility(View.INVISIBLE);
         }
-        if (Qrcode.inqrcode == true){
+        if (Qrcode3.inqrcode == true){
             text12.setVisibility(View.INVISIBLE);
             text11.setVisibility(View.INVISIBLE);
             buy1.setVisibility(View.INVISIBLE);
             image1.setVisibility(View.INVISIBLE);
         }
-        if (Qrcode3.inqrcode == true){
+        if (Qrcode.inqrcode == true){
             text31.setVisibility(View.INVISIBLE);
             text32.setVisibility(View.INVISIBLE);
             buy3.setVisibility(View.INVISIBLE);
@@ -49,7 +49,7 @@ public class ItemList extends AppCompatActivity {
         buy1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ItemList.this, Qrcode.class));
+                startActivity(new Intent(ItemList.this, Qrcode3.class));
             }
         });
         buy2.setOnClickListener(new View.OnClickListener() {

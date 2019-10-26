@@ -7,17 +7,24 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class ShopToItem extends AppCompatActivity {
-    ImageView shopItem, back;
+    ImageView shopItem, back, shopItem2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_to_item);
         shopItem = findViewById(R.id.shopitem);
+        shopItem2 = findViewById(R.id.imageView2);
         back = findViewById(R.id.button);
         shopItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ShopToItem.this, ShopList.class));
+            }
+        });
+        shopItem2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ShopToItem.this, ShopList3.class));
             }
         });
         back.setOnClickListener(new View.OnClickListener() {

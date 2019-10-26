@@ -10,12 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShopList2"></activity>
+        <activity android:name=".Receipt4"></activity>
+        <activity android:name=".ShopList3" />
+        <activity android:name=".ShopList2" />
         <activity android:name=".Loading" />
         <activity android:name=".PointWeb" />
-
         <activity android:name=".GoogleMap" />
-
         <activity android:name=".Login" />
         <activity android:name=".Qrcode3" />
         <activity android:name=".MissSwitchPoint" />
@@ -37,6 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCuXZqb92sFHiLmxCvdzkcMcHPVejTr-AY" />

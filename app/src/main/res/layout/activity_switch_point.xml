@@ -22,45 +22,57 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <EditText
-        android:id="@+id/amount"
-        android:layout_width="40dp"
-        android:layout_height="60dp"
-        android:text="10"
-        android:textColor="#000033"
-        android:textSize="20sp"
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="120dp"
+        android:layout_height="20dp"
+        android:text="阿柑姨芋圓"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="0.773" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="扣除家樂福: 5 pt"
-        android:textColor="#000033"
-        android:textSize="20dp"
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:text="name1"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.980"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.808" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="特力屋:"
-        android:textColor="#000033"
-        android:textSize="20sp"
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="name1"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.808" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="name1"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773" />
 
     <ImageButton
         android:id="@+id/button2"
@@ -78,68 +90,95 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <ImageView
-        android:id="@+id/a4"
-        android:layout_width="30dp"
+        android:id="@+id/imageView9"
+        android:layout_width="350dp"
         android:layout_height="30dp"
-        android:src="@mipmap/carrefour"
+        android:scaleType="centerCrop"
+        android:tint="#434346"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.316"
+        app:srcCompat="@mipmap/grey_line" />
 
     <ImageView
-        android:id="@+id/b4"
+        android:id="@+id/c11"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@mipmap/b_and_q"
+        android:src="@mipmap/shop_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198" />
+        app:layout_constraintVertical_bias="0.238" />
 
     <ImageView
-        android:id="@+id/c4"
+        android:id="@+id/c12"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@mipmap/costco"
+        android:src="@mipmap/shop_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.292" />
+
+    <ImageView
+        android:id="@+id/b7"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/shop_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <ImageView
+        android:id="@+id/a6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/shop_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
 
     <Spinner
         android:id="@+id/notify_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#253174"
+        android:background="#B8B8B8"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <TableLayout
-
+        android:id="@+id/table"
         android:layout_width="360dp"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
+        android:background="#585858"
         android:gravity="center"
-        android:stretchColumns="0,1,2"
+        android:stretchColumns="1,2"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62"
-        android:background="#585858">
-        
+        app:layout_constraintVertical_bias="0.6">
+
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="0dp"
@@ -147,16 +186,6 @@
             android:layout_weight="1"
             android:background="#003065">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:text=" 點數 "
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,9 +193,9 @@
                 android:layout_column="1"
                 android:layout_margin="0.5dp"
                 android:gravity="center"
-                android:textColor="#ffffff"
                 android:text=" 標的物 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
                 android:textStyle="bold" />
 
             <TextView
@@ -175,9 +204,9 @@
                 android:layout_column="2"
                 android:layout_margin="0.5dp"
                 android:gravity="center"
-                android:textColor="#ffffff"
                 android:text=" 匯率 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -187,34 +216,27 @@
             android:layout_margin="0.5dp"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 家樂福 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:id="@+id/row11"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 特力屋 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:id="@+id/row12"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 2 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
 
@@ -223,37 +245,29 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="0.5dp"
-            android:layout_weight="1"
-            >
+            android:layout_weight="1">
+
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 家樂福 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
+                android:id="@+id/row21"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 好市多 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:id="@+id/row22"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 3 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
 
@@ -261,153 +275,137 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="0.5dp"
-            android:layout_weight="1"
-            >
+            android:layout_weight="1">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 特力屋 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
+                android:id="@+id/row31"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 家樂福 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:id="@+id/row32"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 0.5 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
+
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="0.5dp"
-            android:layout_weight="1"
-            >
+            android:layout_weight="1">
+
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 特力屋 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
+                android:id="@+id/row41"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 好市多 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:id="@+id/row42"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="0.5dp"
+                android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 1.5 "
-                android:background="#77B5FE"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="0.5dp"
-            android:layout_weight="1"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 好市多 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 家樂福 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 0.33"
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-        </TableRow>
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="0.5dp"
-            android:layout_weight="1"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 好市多 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 好市多 "
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:layout_margin="0.5dp"
-                android:gravity="center"
-                android:text=" 0.66"
-                android:background="#77B5FE"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-        </TableRow>
-
 
     </TableLayout>
+
+    <TextView
+        android:id="@+id/textView57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:text=" 遠傳電信 : 1000 pt"
+        android:textColor="#000033"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.717"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:text=" kkday : 80 pt"
+        android:textColor="#000033"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:text=" 中華航空 : 3000 pt"
+        android:textColor="#000033"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.717"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
+
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:text=" 阿柑姨芋圓 : 10 pt"
+        android:textColor="#000033"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="獲得途中。點數: 0 pt"
+        android:textColor="#000033"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866" />
 
     <TextView
         android:id="@+id/textView36"
@@ -451,7 +449,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="切換帳號"
+        android:text="切換帳號 "
         android:textColor="#000033"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -460,6 +458,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="選擇兌換店家: "
+        android:textColor="#000033"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="選擇兌換店家: "
+        android:textColor="#000033"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.774" />
 
     <TextView
         android:id="@+id/textView2"
@@ -494,47 +527,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.084" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="家樂福 : 900 pt"
-        android:textColor="#000033"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="特力屋 : 800 pt"
-        android:textColor="#000033"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="好市多 : 850 pt"
-        android:textColor="#000033"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="notify_array">
-        <item>A -> B</item>
-        <item>A -> C</item>
-        <item>B -> A</item>
-        <item>B -> C</item>
-        <item>C -> A</item>
-        <item>C -> B</item>
+        <item>-請選擇店家-</item>
+        <item>阿柑姨芋圓</item>
+        <item>kkday</item>
+        <item>中華航空</item>
+        <item>遠傳電信</item>
+        <item>途中。九份國際青年旅舍</item>
     </array>
 </resources>
