@@ -5,7 +5,11 @@ import android.graphics.BitmapFactory;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -13,15 +17,38 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.FetchPlaceRequest;
+import com.google.android.libraries.places.api.net.FetchPlaceResponse;
+import com.google.android.libraries.places.api.net.PlacesClient;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class GoogleMap extends FragmentActivity
         implements OnMapReadyCallback , com.google.android.gms.maps.GoogleMap.OnMarkerClickListener {
+    private static final String TAG ="" ;
     public com.google.android.gms.maps.GoogleMap map;
+
+    ImageButton eat ;
+    ImageButton tour;
+    ImageButton bed ;
+
     private static final LatLng hotel1= new LatLng(25.109010, 121.845632);
-    private static final LatLng hotel2= new LatLng(25.110707, 121.844478);
-    private static final LatLng hotel3= new LatLng(25.109801, 121.845568);
-    private static final LatLng hotel4= new LatLng(25.109767, 121.844182);
-    private static final LatLng hotel5= new LatLng(25.110613, 121.845316);
+    private static final LatLng hotel2= new LatLng(25.110625, 121.844526);
+    private static final LatLng hotel3= new LatLng(25.109676, 121.845616);
+    private static final LatLng hotel4= new LatLng(25.109855, 121.844356);
+    private static final LatLng hotel5= new LatLng(25.108561, 121.844020);
 
     private static final LatLng eat1 = new LatLng(25.107650, 121.843681);
     private static final LatLng eat2 = new LatLng(25.108748, 121.844386);
@@ -52,6 +79,8 @@ public class GoogleMap extends FragmentActivity
     private Marker mplay3;
     private Marker mplay4;
     private Marker mplay5;
+    PlacesClient placesClient;
+
 
 
 
@@ -66,11 +95,135 @@ public class GoogleMap extends FragmentActivity
         setContentView(R.layout.activity_google_map);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapFragment);
         mapFragment.getMapAsync(this);
+        eat  = findViewById(R.id.imageButton6);
+        bed  = findViewById(R.id.imageButton5);
+        tour  = findViewById(R.id.imageButton2);
+        String[] list = new String[2];
+        String apiKey = "AIzaSyD3FAtc8B4KBl87ELlMzSfIigOD_21oEMw";
+        Places.initialize(getApplicationContext(), apiKey);
+        placesClient = Places.createClient(this);
 
+        eat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mhotel1.setVisible(false);
+                mhotel2.setVisible(false);
+                mhotel3.setVisible(false);
+                mhotel4.setVisible(false);
+                mhotel5.setVisible(false);
+
+                meat1.setVisible(true);
+                meat2.setVisible(true);
+                meat3.setVisible(true);
+                meat4.setVisible(true);
+                meat5.setVisible(true);
+
+                mplay1.setVisible(false);
+                mplay2.setVisible(false);
+                mplay3.setVisible(false);
+                mplay4.setVisible(false);
+                mplay5.setVisible(false);
+
+            }
+        });
+        bed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mhotel1.setVisible(true);
+                mhotel2.setVisible(true);
+                mhotel3.setVisible(true);
+                mhotel4.setVisible(true);
+                mhotel5.setVisible(true);
+
+                meat1.setVisible(false);
+                meat2.setVisible(false);
+                meat3.setVisible(false);
+                meat4.setVisible(false);
+                meat5.setVisible(false);
+
+                mplay1.setVisible(false);
+                mplay2.setVisible(false);
+                mplay3.setVisible(false);
+                mplay4.setVisible(false);
+                mplay5.setVisible(false);
+
+
+            }
+        });
+        tour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mhotel1.setVisible(false);
+                mhotel2.setVisible(false);
+                mhotel3.setVisible(false);
+                mhotel4.setVisible(false);
+                mhotel5.setVisible(false);
+
+                meat1.setVisible(false);
+                meat2.setVisible(false);
+                meat3.setVisible(false);
+                meat4.setVisible(false);
+                meat5.setVisible(false);
+
+                mplay1.setVisible(true);
+                mplay2.setVisible(true);
+                mplay3.setVisible(true);
+                mplay4.setVisible(true);
+                mplay5.setVisible(true);
+
+
+            }
+        });
+
+    }
+    public void set_marker()
+    {
+        //String[] placeId = new String[5];
+        List<String> placeId = new ArrayList<String>();
+        placeId.add("ChIJEdUaERhFXTQRcLJO6yBxBH4");
+        placeId.add("ChIJU4e0kBdFXTQRIEZfgRpkmfU");
+        placeId.add("ChIJwQdTIxhFXTQR7U3Fl45Wkfw");
+        placeId.add("ChIJKTVU8UzFDRQRe5Dk1rXutGA");
+        placeId.add("ChIJwcBWZj1FXTQRU5nMO-ydvKc");
+        List<Marker> markers = new ArrayList<Marker>();
+        markers.add(mhotel1);
+        markers.add(mhotel2);
+        markers.add(mhotel3);
+        markers.add(mhotel4);
+        markers.add(mhotel5);
+
+
+        for(int i = 0;i<5;i++)
+        {
+            get_rate_name(placeId.get(i),markers.get(i));
+        }
+    }
+    public void get_rate_name(String place_ID,Marker marker)
+    {
+
+        List<Place.Field> placeFields = Arrays.asList(Place.Field.NAME, Place.Field.RATING);
+        FetchPlaceRequest request = FetchPlaceRequest.newInstance(place_ID, placeFields);
+        DecimalFormat df = new DecimalFormat("######0.00");
+
+        placesClient.fetchPlace(request).addOnSuccessListener((response) -> {
+            Place place = response.getPlace();
+            marker.setTitle(place.getName());
+            marker.setSnippet("評價" + df.format(place.getRating()));
+            Log.i(TAG, "Place found: " + place.getName());
+        }).addOnFailureListener((exception) -> {
+            if (exception instanceof ApiException) {
+                ApiException apiException = (ApiException) exception;
+                int statusCode = apiException.getStatusCode();
+                // Handle error with given status code.
+                Log.e(TAG, "Place not found: " + exception.getMessage());
+            }
+        });
     }
 
     @Override
     public boolean onMarkerClick(Marker marker) {
+        marker.showInfoWindow();
+
         return false;
     }
 
@@ -83,8 +236,10 @@ public class GoogleMap extends FragmentActivity
     @Override
     public void onMapReady(com.google.android.gms.maps.GoogleMap googleMap) {
         map = googleMap;
-        mhotel1 = map.addMarker(new MarkerOptions().position(hotel1).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("bed",100,100))));
-        mhotel2 = map.addMarker(new MarkerOptions().position(hotel2).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("bed",100,100))));
+        String placeId = "ChIJEdUaERhFXTQRcLJO6yBxBH4";
+        //get_rate_name(placeId);
+        mhotel1 = map.addMarker(new MarkerOptions().position(hotel1).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("bed",100,100))).title("123"));
+        mhotel2 = map.addMarker(new MarkerOptions().position(hotel2).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("bed",100,100))).title("test"));
         mhotel3 = map.addMarker(new MarkerOptions().position(hotel3).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("bed",100,100))));
         mhotel4 = map.addMarker(new MarkerOptions().position(hotel4).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("bed",100,100))));
         mhotel5 = map.addMarker(new MarkerOptions().position(hotel5).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("bed",100,100))));
@@ -101,10 +256,28 @@ public class GoogleMap extends FragmentActivity
         mplay4 = map.addMarker(new MarkerOptions().position(play4).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("tour",100,100))));
         mplay5 = map.addMarker(new MarkerOptions().position(play5).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("tour",100,100))));
 
+        mhotel1.setVisible(true);
+        mhotel2.setVisible(true);
+        mhotel3.setVisible(true);
+        mhotel4.setVisible(true);
+        mhotel5.setVisible(true);
+
+        meat1.setVisible(false);
+        meat2.setVisible(false);
+        meat3.setVisible(false);
+        meat4.setVisible(false);
+        meat5.setVisible(false);
+
+        mplay1.setVisible(false);
+        mplay2.setVisible(false);
+        mplay3.setVisible(false);
+        mplay4.setVisible(false);
+        mplay5.setVisible(false);
+
         mme=map.addMarker(new MarkerOptions().position(me).icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("man",125,125))));
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(me,(float)16.5));
         map.setOnMarkerClickListener(this);
-
+        set_marker();
 
 
     }
