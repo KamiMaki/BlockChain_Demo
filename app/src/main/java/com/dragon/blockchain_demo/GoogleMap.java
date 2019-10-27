@@ -88,7 +88,7 @@ public class GoogleMap extends FragmentActivity
     private Marker mme;
     //private static final LatLng start = new LatLng(24.964852, 121.209432);
 
-    Button confirm;
+    //Button confirm;
     ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
