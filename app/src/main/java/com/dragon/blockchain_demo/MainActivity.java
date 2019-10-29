@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ShopList.class));
-                Intent intent = getPackageManager().getLaunchIntentForPackage("com.kkday.blockchain");
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.kkday.iTravelChain");
                 startActivity(intent);
             }
         });

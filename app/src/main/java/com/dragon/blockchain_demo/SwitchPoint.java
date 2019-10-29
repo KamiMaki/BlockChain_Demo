@@ -3,6 +3,7 @@ package com.dragon.blockchain_demo;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Looper;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -146,6 +147,7 @@ public class SwitchPoint extends AppCompatActivity {
         Timer timer02 = new Timer();
         timer02.schedule(task2, 0, 1000);
 
+
         notify.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -223,6 +225,30 @@ public class SwitchPoint extends AppCompatActivity {
             public void onClick(View view) {
                 upload_com = "";
                 upload_amount = "";
+               /* Timer timer03 = new Timer();
+
+                TimerTask task3 = new TimerTask() {
+                    @Override
+                    public void run() {
+                        Thread thread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(point_amount[3] == 0)
+                                {
+                                    Looper.prepare();
+                                    Toast.makeText(SwitchPoint.this,"撮合成功!", Toast.LENGTH_LONG).show();
+                                    startActivity (new Intent(SwitchPoint.this, Receipt.class));
+
+
+                                }
+                            }
+                        });
+                        thread.start();
+                    }
+                } ;
+                */
+                Timer timer03 = new Timer();
+                timer03.schedule(timerTask3 , 8000);
                 if(progressBar.getVisibility() == ProgressBar.VISIBLE)
                 {
                     progressbar_off();
@@ -245,14 +271,18 @@ public class SwitchPoint extends AppCompatActivity {
                 webview.post(new Runnable() {
                     @Override
                     public void run() {
-
                         webview.loadUrl("javascript:test('"+upload_com+"','"+companyB+"','"+upload_amount+"')");
+
+
                     }
+
                 });
+
                 //Thread thread2 = new Thread(mutiThread3);
                 //thread2.start(); // 開始執行
                 //Toast.makeText(SwitchPoint.this,"撮合成功!", Toast.LENGTH_LONG).show();
                 //startActivity (new Intent(SwitchPoint.this, Receipt.class));
+
             }
         });
         bt2.setOnClickListener(new View.OnClickListener() {
@@ -380,6 +410,13 @@ public class SwitchPoint extends AppCompatActivity {
     {
         progressBar.setVisibility(ProgressBar.INVISIBLE);
     }
+    TimerTask timerTask3 = new TimerTask() {
+        @Override
+        public void run() {
+            //Toast.makeText(SwitchPoint.this,"撮合成功!", Toast.LENGTH_LONG).show();
+            startActivity (new Intent(SwitchPoint.this, Receipt.class));
+        }
+    };
 
     public  Runnable mutiThread = new Runnable() {
         public void run() {
