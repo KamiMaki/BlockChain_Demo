@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dragon.blockchain_demo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Receipt4"></activity>
+        <activity android:name=".Receipt4" />
         <activity android:name=".ShopList3" />
         <activity android:name=".ShopList2" />
         <activity android:name=".Loading" />
@@ -42,7 +44,5 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD3FAtc8B4KBl87ELlMzSfIigOD_21oEMw" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

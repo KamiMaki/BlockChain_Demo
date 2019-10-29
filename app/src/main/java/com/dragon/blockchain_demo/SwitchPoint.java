@@ -1,11 +1,19 @@
 package com.dragon.blockchain_demo;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.webkit.JavascriptInterface;
+import android.webkit.JsResult;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,6 +21,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -34,10 +43,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Timer;
 import java.util.TimerTask;
 
 
 public class SwitchPoint extends AppCompatActivity {
+    Button btn3;
     Spinner notify;
     Button bt;
     ImageButton bt2;
@@ -47,22 +58,29 @@ public class SwitchPoint extends AppCompatActivity {
     CheckBox check1, check2, check3, check4;
     String current_position;
     String result,result2;
+    ProgressBar progressBar;
     String[] company_name = new String[5];
     int useToken = 0;
     double [] exchange = new double[5];
-    int[] point = {10,80,3000,1000,0};
-    int [] ID = new int [5];
+    //int[] point = {10,80,3000,1000,0};
+    String [] CID = new String [5];
     int [] change_Amount = new int[5];
+    String[] newarray = {"", "", "", ""};
+    double[] newexchange = {0, 0, 0, 0};
+    int Comb;
+    WebView webview;
+    String upload_com = "";
+    String upload_amount = "";
 
     boolean[] selected = new boolean[5];
     int total = 0;//兌換獲得的點數
-    int point_amount[] = new int[4];
+    int point_amount[] = {0,0,0,0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_switch_point);
-        Thread thread = new Thread(mutiThread);
-        thread.start(); // 開始執行
+        //Thread thread = new Thread(mutiThread);
+        //thread.start(); // 開始執行
         Thread thread1 = new Thread(mutiThread2);
         thread1.start(); // 開始執行
         for(int i = 0;i<5;i++) change_Amount[i] = 0;
@@ -70,8 +88,11 @@ public class SwitchPoint extends AppCompatActivity {
         notify = findViewById(R.id.notify_spinner);
         bt = findViewById(R.id.button);
         bt2 = findViewById(R.id.button2);
+        webview = findViewById(R.id.web_view);
+        progressBar = findViewById(R.id.progressBar);
         ArrayAdapter<CharSequence> nAdapter = ArrayAdapter.createFromResource(this, R.array.notify_array, R.layout.spinner_item);
         nAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        btn3 = findViewById(R.id.button3);
         notify.setAdapter(nAdapter);
         pt1 = findViewById(R.id.pt1);
         pt2 = findViewById(R.id.pt2);
@@ -92,15 +113,46 @@ public class SwitchPoint extends AppCompatActivity {
         tv1 = findViewById(R.id.textview1);
         table = findViewById(R.id.table);
         amount = findViewById(R.id.amount);
+        webview =(WebView) findViewById(R.id.web_view);
+        webview.getSettings().setJavaScriptEnabled(true);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        webview.addJavascriptInterface(new JavaScriptInterface(SwitchPoint.this), "JSInterface");
+
+        //webview.getSettings().setPluginsEnabled(true);
+
+        // webview.setWebViewClient();(new WebChromeClient() ) ; //不調用系統瀏覽器
+        webview.loadUrl("http://140.113.65.235/uploadchange.html");
 
 
 
-        final String[] newarray = {"", "", "", ""};
-        final double[] newexchange = {0, 0, 0, 0};
+
+        TimerTask task1 = new TimerTask() {
+            @Override
+            public void run() {
+                Thread thread = new Thread(mutiThread);
+                thread.start();
+            }
+        };
+        TimerTask task2 = new TimerTask() {
+            @Override
+            public void run() {
+                Thread thread = new Thread(mutiThread2);
+                thread.start();
+            }
+        };
+        Timer timer01 = new Timer();
+        timer01.schedule(task1, 0, 1000);
+        Timer timer02 = new Timer();
+        timer02.schedule(task2, 0, 1000);
+
         notify.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                System.out.println(CID);
+                System.out.println(company_name);
                 int position = pos - 1;
+                Comb = position;
                 if (pos != 0) {
                     for (int i = 0; i < 4; i++) {
                         if (position > i) {
@@ -158,11 +210,47 @@ public class SwitchPoint extends AppCompatActivity {
                 amount.setVisibility(View.INVISIBLE);
             }
         });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SwitchPoint.this,"撮合成功!", Toast.LENGTH_LONG).show();
+                startActivity (new Intent(SwitchPoint.this, Receipt.class));
+
+            }
+        });
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Thread thread2 = new Thread(mutiThread3);
-                thread2.start(); // 開始執行
+                upload_com = "";
+                upload_amount = "";
+                if(progressBar.getVisibility() == ProgressBar.VISIBLE)
+                {
+                    progressbar_off();
+                }
+                else
+                {
+                    progressbar_on();
+                }
+                for(int i = 0;i<5;i++)
+                {
+                    if(selected[i])
+                    {
+                        upload_com+=CID[i];
+                        upload_com+=',';
+                        upload_amount+=change_Amount[i];
+                        upload_amount+=',';
+                    }
+                }
+                String companyB = CID[Comb];
+                webview.post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        webview.loadUrl("javascript:test('"+upload_com+"','"+companyB+"','"+upload_amount+"')");
+                    }
+                });
+                //Thread thread2 = new Thread(mutiThread3);
+                //thread2.start(); // 開始執行
                 //Toast.makeText(SwitchPoint.this,"撮合成功!", Toast.LENGTH_LONG).show();
                 //startActivity (new Intent(SwitchPoint.this, Receipt.class));
             }
@@ -177,24 +265,24 @@ public class SwitchPoint extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
                 if(isChecked){
-                    int sum = (int)(point[0] * Double.valueOf(row12.getText().toString()));
+                    int sum = (int)(point_amount[0] * Double.valueOf(row12.getText().toString()));
                     total = total  + sum;
                     String s = "獲得 "+current_position+" 點數: " + total + " pt";
                     amount.setText(s);
                     useToken++;
                     selected[0] = true;
-                    change_Amount[0] = change_Amount[0]+ sum ;
+                    change_Amount[0] = change_Amount[0]+ point_amount[0] ;
                     System.out.println("---sum---"+change_Amount[0]);
 
                 }
                 else {
-                    int sum = (int)(point[0] * Double.valueOf(row12.getText().toString()));
+                    int sum = (int)(point_amount[0] * Double.valueOf(row12.getText().toString()));
                     total = total  - sum;
                     String s = "獲得 "+current_position+"點數: " + total + " pt";
                     amount.setText(s);
                     useToken--;
                     selected[0] = false;
-                    change_Amount[0] = change_Amount[0]- sum ;
+                    change_Amount[0] = change_Amount[0]- point_amount[0] ;
                 }
                 //TODO fix amount text crush when length not the same
             }
@@ -203,23 +291,23 @@ public class SwitchPoint extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
                 if(isChecked){
-                    int sum = (int)(point[1] * Double.valueOf(row22.getText().toString()));
+                    int sum = (int)(point_amount[1] * Double.valueOf(row22.getText().toString()));
                     total = total  + sum;
                     String s = "獲得 "+current_position+" 點數: " + total + " pt";
                     amount.setText(s);
                     useToken++;
                     selected[1] = true;
-                    change_Amount[1] = change_Amount[1]+ sum ;
+                    change_Amount[1] = change_Amount[1]+ point_amount[1] ;
                     System.out.println("---sum---"+change_Amount[1]);
                 }
                 else{
-                    int sum = (int)(point[1] * Double.valueOf(row22.getText().toString()));
+                    int sum = (int)(point_amount[1] * Double.valueOf(row22.getText().toString()));
                     total = total  - sum;
                     String s = "獲得 "+current_position+" 點數: " + total + " pt";
                     amount.setText(s);
                     useToken--;
                     selected[1] = false;
-                    change_Amount[1] = change_Amount[1]- sum ;
+                    change_Amount[1] = change_Amount[1]- point_amount[1] ;
                 }
             }
         });
@@ -227,23 +315,23 @@ public class SwitchPoint extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
                 if(isChecked){
-                    int sum = (int)(point[2] * Double.valueOf(row32.getText().toString()));
+                    int sum = (int)(point_amount[2] * Double.valueOf(row32.getText().toString()));
                     total = total  + sum;
                     String s = "獲得 "+current_position+" 點數: " + total + " pt";
                     amount.setText(s);
                     useToken++;
                     selected[2] = true;
-                    change_Amount[2] = change_Amount[2]+ sum ;
+                    change_Amount[2] = change_Amount[2]+ point_amount[2] ;
                     System.out.println("---sum---"+change_Amount[2]);
                 }
                 else{
-                    int sum = (int)(point[2] * Double.valueOf(row32.getText().toString()));
+                    int sum = (int)(point_amount[2] * Double.valueOf(row32.getText().toString()));
                     total = total  - sum;
                     String s = "獲得 "+current_position+" 點數: " + total + " pt";
                     amount.setText(s);
                     useToken--;
                     selected[2] = false;
-                    change_Amount[2] = change_Amount[2] - sum ;
+                    change_Amount[2] = change_Amount[2]- point_amount[2] ;
                 }
             }
         });
@@ -251,39 +339,53 @@ public class SwitchPoint extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
                 if(isChecked){
-                    int sum = (int)(point[3] * Double.valueOf(row42.getText().toString()));
+                    int sum = (int)(point_amount[3] * Double.valueOf(row42.getText().toString()));
                     total = total  + sum;
                     String s = "獲得 "+current_position+" 點數: " + total + " pt";
                     amount.setText(s);
                     useToken++;
                     selected[3] = true;
-                    change_Amount[3] = change_Amount[3]+ sum ;
+                    change_Amount[3] = change_Amount[3]+ point_amount[3] ;
                     System.out.println("---sum---"+change_Amount[3]);
                 }
                 else{
-                    int sum = (int)(point[3] * Double.valueOf(row42.getText().toString()));
+                    int sum = (int)(point_amount[3] * Double.valueOf(row42.getText().toString()));
                     total = total  - sum;
                     String s = "獲得 "+current_position+" 點數: " + total + " pt";
                     amount.setText(s);
                     useToken--;
                     selected[3] = false;
-                    change_Amount[3] = change_Amount[3]- sum ;
+                    change_Amount[3] = change_Amount[3]- point_amount[3] ;
                 }
             }
         });
     }
-    public void refresh_pt()
+    public class JavaScriptInterface {
+        private Activity activity;
+        public JavaScriptInterface(Activity activiy) {
+            this.activity = activiy;
+        }
+        @JavascriptInterface
+        public void get_result()
+        {
+
+            Toast.makeText(activity, "我被從WebView呼叫了", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void progressbar_on()
     {
-        pt1.setText(point_amount[0]+"pt");
-        pt2.setText(point_amount[1]+"pt");
-        pt3.setText(point_amount[2]+"pt");
-        pt4.setText(point_amount[3]+"pt");
+        progressBar.setVisibility(ProgressBar.VISIBLE);
+    }
+    public void progressbar_off()
+    {
+        progressBar.setVisibility(ProgressBar.INVISIBLE);
     }
 
-    private  Runnable mutiThread = new Runnable() {
+    public  Runnable mutiThread = new Runnable() {
         public void run() {
 
             try {
+                //Log.d("update pt","");
                 URL url = new URL("http://140.113.65.235/getMP.php");
                 // 開始宣告 HTTP 連線需要的物件，這邊通常都是一綑的
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -333,8 +435,18 @@ public class SwitchPoint extends AppCompatActivity {
                             JSONObject jsonObject = array.getJSONObject(i);
                             company_name[i] = jsonObject.getString("name");
                             exchange[i] = jsonObject.getInt("mp");
-                            ID[i] = jsonObject.getInt("ID");
-                            // Log.d("TAG", "name:" + name + ", mp:" + mp + ", ID:" + ID);
+                            CID[i] = jsonObject.getString("CID");
+
+
+                        }
+                        for (int i = 0; i < 4; i++) {
+                            if (4 > i) {
+                                newarray[i] = company_name[i];
+                                newexchange[i] = exchange[i] / exchange[4];
+                            } else {
+                                newarray[i] = company_name[i + 1];
+                                newexchange[i] = exchange[i + 1] / exchange[4];
+                            }
                         }
 
                     } catch (JSONException e) {
@@ -349,6 +461,7 @@ public class SwitchPoint extends AppCompatActivity {
         public void run() {
 
             try {
+               // System.out.println("更改PT");
                 URL url = new URL("http://140.113.65.235/getuserpoint.php");
                 // 開始宣告 HTTP 連線需要的物件，這邊通常都是一綑的
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -398,9 +511,13 @@ public class SwitchPoint extends AppCompatActivity {
                             JSONObject jsonObject = array.getJSONObject(i);
                             point_amount[i] = jsonObject.getInt("amount");
 
-                            Log.d("TAG", "amount" +point_amount[i]);
+                            //Log.d("TAG", "amount" +point_amount[i]);
                         }
-                        refresh_pt();
+                        //System.out.println("更改PT的文字");
+                        pt1.setText(point_amount[0]+"pt");
+                        pt2.setText(point_amount[1]+"pt");
+                        pt3.setText(point_amount[2]+"pt");
+                        pt4.setText(point_amount[3]+"pt");
 
 
                     } catch (JSONException e) {
@@ -410,126 +527,4 @@ public class SwitchPoint extends AppCompatActivity {
             });
         }
     };
-    private final Runnable mutiThread3 = new Runnable() {
-        public void run() {
-
-            try {
-                URL url = new URL("http://140.113.65.235/uploadchange.php");
-                BufferedReader reader = null;
-                // 開始宣告 HTTP 連線需要的物件，這邊通常都是一綑的
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                // 建立 Google 比較挺的 HttpURLConnection 物件
-                connection.setRequestMethod("POST");
-                // 設定連線方式為 POST
-                connection.setDoOutput(true); // 允許輸出
-                connection.setDoInput(true); // 允許讀入
-                connection.setUseCaches(false); // 不使用快取
-                connection.setRequestMethod("POST");  //設定以Post方式提交資料
-                //conn.setRequestProperty("Connection", "Keep-Alive");
-                connection.setRequestProperty("Charset", "UTF-8");
-                // 設定檔案型別:
-                //conn.setRequestProperty("Content-Type","application/json; charset=UTF-8");
-                // 設定接收型別否則返回415錯誤
-                //conn.setRequestProperty("accept","*/*")此處為暴力方法設定接受所有型別，以此來防範返回415;
-                connection.setRequestProperty("accept", "application/json");
-                connection.connect(); // 開始連線
-                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyyMMddhhmmss");
-                String time = sDateFormat.format(new Date());
-                String orderno = time + total;
-                JSONArray CID = new JSONArray();
-                JSONArray change_amount = new JSONArray();
-                List<Integer> company = new ArrayList<>();
-                List<Integer> CAmount = new ArrayList<>();
-                for (int i = 0; i < 4; i++) {
-                    if (selected[i]) {
-                        company.add(ID[i]);
-                        CAmount.add(change_Amount[i]);
-                    }
-                }
-                System.out.println("---use token---" + useToken);
-
-                for (int i = 0; i < useToken; i++) {
-                    CID.put(company.get(i));
-                    change_amount.put(CAmount.get(i));
-                    String Json = CID.toString();
-                    String Json1 = change_amount.toString();
-
-                    System.out.println("---CID---" + Json);
-                    System.out.println("---CHANGEAMOUNT---" + Json1);
-                }
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("orderno", orderno);
-                jsonObject.put("CID", CID);
-                jsonObject.put("change_amount", change_amount);
-
-
-                int responseCode = connection.getResponseCode();
-                // 建立取得回應的物件
-                if (responseCode == HttpURLConnection.HTTP_OK) {
-                    String Json = jsonObject.toString();
-
-                    System.out.println("-----------    " + Json);
-                    // 如果 HTTP 回傳狀態是 OK ，而不是 Error
-                    if (Json != null && !TextUtils.isEmpty(Json)) {
-                        byte[] writebytes = Json.getBytes();
-                        // 設定檔案長度
-                        System.out.println("upload~~~~~~~");
-                        connection.setRequestProperty("Content-Length", String.valueOf(writebytes.length));
-                        OutputStream outwritestream = connection.getOutputStream();
-                        outwritestream.write(Json.getBytes());
-                        outwritestream.flush();
-                        outwritestream.close();
-                        Log.d("upload result" ,""+connection.getResponseCode());
-                        System.out.println("upload result" + connection.getResponseCode());//如輸出200，則對了
-
-                    }
-
-                        reader = new BufferedReader(
-                                new InputStreamReader(connection.getInputStream()));
-                        result = reader.readLine();
-                        System.out.println(result);
-
-
-
-                }
-
-
-            } catch (Exception e) {
-                result = e.toString(); // 如果出事，回傳錯誤訊息
-            }
-
-            // 當這個執行緒完全跑完後執行
-            /*runOnUiThread(new Runnable() {
-                public void run() {
-                    try {
-                        JSONArray array = new JSONArray(result);
-                        for (int i = 0; i < array.length(); i++) {
-                            JSONObject jsonObject = array.getJSONObject(i);
-                            point_amount[i] = jsonObject.getInt("amount");
-
-                            Log.d("TAG", "amount" +point_amount[i]);
-                        }
-                        refresh_pt();
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });*/
-        }
-    };
-
-    private  Runnable r1 = new Runnable() {
-        @Override
-        public void run() {
-            refresh_pt();
-        }
-    };
-    private TimerTask task = new TimerTask() {
-        public void run() {
-            Thread t2 = new Thread(r1);
-            t2.start();
-        }
-    };
-
 }
