@@ -1,5 +1,6 @@
 package com.dragon.blockchain_demo;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v4.app.FragmentActivity;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.android.gms.common.api.ApiException;
@@ -43,6 +45,8 @@ public class GoogleMap extends FragmentActivity
     ImageButton eat ;
     ImageButton tour;
     ImageButton bed ;
+    Button confirm;
+    ImageButton back;
 
     private static final LatLng hotel1= new LatLng(25.109010, 121.845632);
     private static final LatLng hotel2= new LatLng(25.110625, 121.844526);
@@ -89,7 +93,7 @@ public class GoogleMap extends FragmentActivity
     //private static final LatLng start = new LatLng(24.964852, 121.209432);
 
     //Button confirm;
-    ImageButton back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,10 +103,24 @@ public class GoogleMap extends FragmentActivity
         eat  = findViewById(R.id.imageButton6);
         bed  = findViewById(R.id.imageButton5);
         tour  = findViewById(R.id.imageButton2);
+        confirm = findViewById(R.id.button);
+        back = findViewById(R.id.button2);
         String[] list = new String[2];
         String apiKey = "AIzaSyD3FAtc8B4KBl87ELlMzSfIigOD_21oEMw";
         Places.initialize(getApplicationContext(), apiKey);
         placesClient = Places.createClient(this);
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GoogleMap.this, ShopList2.class));
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GoogleMap.this, MainActivity.class));
+            }
+        });
 
         eat.setOnClickListener(new View.OnClickListener() {
             @Override
