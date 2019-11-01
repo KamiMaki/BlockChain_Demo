@@ -1,8 +1,10 @@
 package com.dragon.blockchain_demo;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,6 +41,19 @@ public class ShopList extends AppCompatActivity {
 //        home = findViewById(R.id.radioButton);
 //        take = findViewById(R.id.radioButton2);
         radioGroup = findViewById(R.id.radioGroup);
+        final ImageView image = new ImageView(this);
+        image.setImageResource(R.mipmap.dialogcoin);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(ShopList.this, R.style.AlertDialog);
+        dialogBuilder.setTitle("提示:")
+                .setMessage("掃描到主打商品，獲得10點!!")
+                .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setView(image);
+        dialogBuilder.show();
+
         item1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

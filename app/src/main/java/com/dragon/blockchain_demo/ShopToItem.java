@@ -18,7 +18,7 @@ public class ShopToItem extends AppCompatActivity {
         shopItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShopToItem.this, ShopList.class));
+                startActivity(new Intent(ShopToItem.this, ShopList3.class));
             }
         });
         shopItem2.setOnClickListener(new View.OnClickListener() {

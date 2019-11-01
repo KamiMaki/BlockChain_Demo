@@ -53,7 +53,7 @@ public class SwitchPoint extends AppCompatActivity {
     Spinner notify;
     Button bt;
     ImageButton bt2;
-    TextView row11,row12,row21,row22,row31,row32,row41,row42,tv1, amount;
+    TextView row11,row12,row21,row22,row31,row32,row41,row42,tv1,amount,row13,row14,row15,row23,row24,row25,row33,row34,row35,row43,row44,row45;
     TextView pt1,pt2,pt3,pt4;
     TableLayout table;
     CheckBox check1, check2, check3, check4;
@@ -65,9 +65,11 @@ public class SwitchPoint extends AppCompatActivity {
     double [] exchange = new double[5];
     //int[] point = {10,80,3000,1000,0};
     String [] CID = new String [5];
+    double [] exchange_rate = new double[5];
+    int [] lastprice = new int [5];
     int [] change_Amount = new int[5];
     String[] newarray = {"", "", "", ""};
-    double[] newexchange = {0, 0, 0, 0};
+    double[] newexchange = {0.0, 0.0, 0.0, 0.0};
     int Comb;
     WebView webview;
     String upload_com = "";
@@ -101,12 +103,24 @@ public class SwitchPoint extends AppCompatActivity {
         pt4 = findViewById(R.id.pt4);
         row11 = findViewById(R.id.row11);
         row12 = findViewById(R.id.row12);
+        row13 = findViewById(R.id.row13);
+        row14 = findViewById(R.id.row14);
+        row15 = findViewById(R.id.row15);
         row21 = findViewById(R.id.row21);
         row22 = findViewById(R.id.row22);
+        row23 = findViewById(R.id.row23);
+        row24 = findViewById(R.id.row24);
+        row25 = findViewById(R.id.row25);
         row31 = findViewById(R.id.row31);
         row32 = findViewById(R.id.row32);
+        row33 = findViewById(R.id.row33);
+        row34 = findViewById(R.id.row34);
+        row35 = findViewById(R.id.row35);
         row41 = findViewById(R.id.row41);
         row42 = findViewById(R.id.row42);
+        row43 = findViewById(R.id.row43);
+        row44 = findViewById(R.id.row44);
+        row45 = findViewById(R.id.row45);
         check1 = findViewById(R.id.checkBox1);
         check2 = findViewById(R.id.checkBox2);
         check3 = findViewById(R.id.checkBox3);
@@ -151,28 +165,35 @@ public class SwitchPoint extends AppCompatActivity {
         notify.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                System.out.println(CID);
-                System.out.println(company_name);
                 int position = pos - 1;
+                System.out.println(position);
                 Comb = position;
                 if (pos != 0) {
                     for (int i = 0; i < 4; i++) {
-                        if (position > i) {
-                            newarray[i] = company_name[i];
-                            newexchange[i] = exchange[i] / exchange[position];
-                        } else {
-                            newarray[i] = company_name[i + 1];
-                            newexchange[i] = exchange[i + 1] / exchange[position];
-                        }
+                        newarray[i] = company_name[i];
+                        newexchange[i] = exchange[i] / exchange[4];
+                        System.out.println(position);
                     }
                     row11.setText(newarray[0]);
                     row12.setText(String.valueOf(newexchange[0]));
+                    row13.setText(String.valueOf(exchange[0]));
+                    row14.setText(String.valueOf(exchange_rate[0]));
+                    row15.setText(String.valueOf(lastprice[0]));
                     row21.setText(newarray[1]);
                     row22.setText(String.valueOf(newexchange[1]));
+                    row23.setText(String.valueOf(exchange[1]));
+                    row24.setText(String.valueOf(exchange_rate[1]));
+                    row25.setText(String.valueOf(lastprice[1]));
                     row31.setText(newarray[2]);
                     row32.setText(String.valueOf(newexchange[2]));
+                    row33.setText(String.valueOf(exchange[2]));
+                    row34.setText(String.valueOf(exchange_rate[2]));
+                    row35.setText(String.valueOf(lastprice[2]));
                     row41.setText(newarray[3]);
                     row42.setText(String.valueOf(newexchange[3]));
+                    row43.setText(String.valueOf(exchange[3]));
+                    row44.setText(String.valueOf(exchange_rate[3]));
+                    row45.setText(String.valueOf(lastprice[3]));
 
                     table.setVisibility(View.VISIBLE);
                     check1.setText(newarray[0]);
@@ -267,7 +288,7 @@ public class SwitchPoint extends AppCompatActivity {
                         upload_amount+=',';
                     }
                 }
-                String companyB = CID[Comb];
+                final String companyB = CID[Comb];
                 webview.post(new Runnable() {
                     @Override
                     public void run() {
@@ -314,7 +335,6 @@ public class SwitchPoint extends AppCompatActivity {
                     selected[0] = false;
                     change_Amount[0] = change_Amount[0]- point_amount[0] ;
                 }
-                //TODO fix amount text crush when length not the same
             }
         });
         check2.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener(){
@@ -337,7 +357,7 @@ public class SwitchPoint extends AppCompatActivity {
                     amount.setText(s);
                     useToken--;
                     selected[1] = false;
-                    change_Amount[1] = change_Amount[1]- point_amount[1] ;
+                    change_Amount[1] = change_Amount[1]- point_amount[1];
                 }
             }
         });
@@ -434,8 +454,7 @@ public class SwitchPoint extends AppCompatActivity {
                 connection.setUseCaches(false); // 不使用快取
                 connection.connect(); // 開始連線
 
-                int responseCode =
-                        connection.getResponseCode();
+                int responseCode = connection.getResponseCode();
                 // 建立取得回應的物件
                 if (responseCode ==
                         HttpURLConnection.HTTP_OK) {
@@ -471,20 +490,16 @@ public class SwitchPoint extends AppCompatActivity {
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject jsonObject = array.getJSONObject(i);
                             company_name[i] = jsonObject.getString("name");
-                            exchange[i] = jsonObject.getInt("mp");
+                            exchange[i] = jsonObject.getDouble("mp");
                             CID[i] = jsonObject.getString("CID");
-
-
+                            System.out.println("exchange" + i + ":" + exchange[i]);
+                            exchange_rate[i] = jsonObject.getDouble("change_rate");
+                            lastprice[i] = jsonObject.getInt("last_price");
                         }
-                        for (int i = 0; i < 4; i++) {
-                            if (4 > i) {
-                                newarray[i] = company_name[i];
-                                newexchange[i] = exchange[i] / exchange[4];
-                            } else {
-                                newarray[i] = company_name[i + 1];
-                                newexchange[i] = exchange[i + 1] / exchange[4];
-                            }
-                        }
+//                        for (int i = 0; i < 4; i++) {
+//                            newarray[i] = company_name[i];
+//                            newexchange[i] = exchange[i] / exchange[4];
+//                        }
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -550,7 +565,7 @@ public class SwitchPoint extends AppCompatActivity {
 
                             //Log.d("TAG", "amount" +point_amount[i]);
                         }
-                        //System.out.println("更改PT的文字");
+
                         pt1.setText(point_amount[0]+"pt");
                         pt2.setText(point_amount[1]+"pt");
                         pt3.setText(point_amount[2]+"pt");

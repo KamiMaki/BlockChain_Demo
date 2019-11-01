@@ -170,8 +170,8 @@
         android:layout_height="200dp"
         android:background="#585858"
         android:gravity="center"
-        android:stretchColumns="1,2"
-        android:visibility="invisible"
+        android:visibility="visible"
+        android:stretchColumns="1,2,3,4,5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -194,6 +194,7 @@
                 android:layout_margin="0.5dp"
                 android:gravity="center"
                 android:text=" 標的物 "
+                android:textSize="15sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
@@ -205,14 +206,52 @@
                 android:layout_margin="0.5dp"
                 android:gravity="center"
                 android:text=" 匯率 "
+                android:textSize="15sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:layout_margin="0.5dp"
+                android:gravity="center"
+                android:text=" 市價 "
+                android:textSize="15sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="4"
+                android:layout_margin="0.5dp"
+                android:gravity="center"
+                android:text=" 匯率變動(%) "
+                android:textSize="15sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="5"
+                android:layout_margin="0.5dp"
+                android:gravity="center"
+                android:text=" 最新成交價 "
+                android:textSize="15sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
         </TableRow>
 
+
         <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="0.5dp"
             android:layout_weight="1">
 
@@ -226,6 +265,7 @@
                 android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 特力屋 "
+                android:textSize="15sp"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -238,8 +278,38 @@
                 android:gravity="center"
                 android:text=" 2 "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-        </TableRow>
 
+            <TextView
+                android:id="@+id/row13"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row14"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row15"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
 
         <TableRow
             android:layout_width="fill_parent"
@@ -257,6 +327,7 @@
                 android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 好市多 "
+                android:textSize="15sp"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -268,6 +339,38 @@
                 android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 3 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/row23"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row24"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:textColor="#35942B"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row25"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
 
@@ -286,6 +389,7 @@
                 android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 家樂福 "
+                android:textSize="15sp"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -298,6 +402,38 @@
                 android:gravity="center"
                 android:text=" 0.5 "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/row33"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row34"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textColor="#ff0000"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row35"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
 
         <TableRow
@@ -305,7 +441,6 @@
             android:layout_height="0dp"
             android:layout_margin="0.5dp"
             android:layout_weight="1">
-
 
             <TextView
                 android:id="@+id/row41"
@@ -316,6 +451,7 @@
                 android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 好市多 "
+                android:textSize="15sp"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -327,6 +463,38 @@
                 android:background="#77B5FE"
                 android:gravity="center"
                 android:text=" 1.5 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/row43"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row44"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
+                android:textColor="#ff0000"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/row45"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="0.5dp"
+                android:background="#77B5FE"
+                android:gravity="center"
+                android:text=" 2 "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
 
@@ -352,7 +520,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="top|left"
-        android:text="kkday:"
+        android:text="kkday : "
         android:textColor="#000033"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

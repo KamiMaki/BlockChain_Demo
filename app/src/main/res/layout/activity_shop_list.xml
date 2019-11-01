@@ -85,7 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="金礦巧克力"
+                    android:text="奶奶補給站"
                     android:textColor="#000033"
                     android:textSize="15sp" />
 

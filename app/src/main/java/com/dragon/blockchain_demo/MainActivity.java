@@ -16,6 +16,7 @@ import static java.lang.Thread.sleep;
 public class MainActivity extends AppCompatActivity {
     Vibrator vibrate;
     ImageButton pointswitch, shop, Item, check,gps, iot, guide;
+    private ShakeListener mShaker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,13 +84,27 @@ public class MainActivity extends AppCompatActivity {
                 setCouponDialog3();
             }
         });
+        final ImageView image = new ImageView(this);
+        image.setImageResource(R.mipmap.dialogcoin);
+        mShaker = new ShakeListener(this);
+        mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
+            public void onShake()
+            {
+                new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .setMessage("您獲得點數10點!")
+                        .setView(image)
+                        .show();
+            }
+        });
     }
     private void setCouponDialog2() {
         vibrate = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        vibrate.vibrate(200);
+        long[] mVibratePattern = new long[]{0, 500, 200, 500, 200, 500};
+        vibrate.vibrate(mVibratePattern,-1);
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
-        dialogBuilder.setTitle("警告:")
-                .setMessage("此處不可使用閃光燈!!")
+        dialogBuilder.setTitle("提示:")
+                .setMessage("偵測到過大音量")
                 .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -99,13 +114,20 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setCouponDialog3() {
         vibrate = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        vibrate.vibrate(200);
+        long[] mVibratePattern = new long[]{0, 1000, 200, 400};
+        vibrate.vibrate(mVibratePattern,-1);
         ImageView image = new ImageView(this);
-        image.setImageResource(R.mipmap.coupon_beacon);
+        image.setImageResource(R.mipmap.shake);
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
         dialogBuilder.setTitle("今日活動通知:")
-                .setMessage("定期導覽:  10:00   15:00\n\n淘金體驗:  10:30   13:00\n\n坑道探險:  09:30 ~ 16:30")
+                .setMessage("定期導覽:  10:00   15:00\n\n淘金體驗:  10:30   13:00\n\n坑道探險:  09:30 ~ 16:30\n\n點數搖搖:  熱烈進行中!!!")
                 .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setView(image)
+                .setNeutralButton("搖一搖", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                     }
