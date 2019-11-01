@@ -65,18 +65,19 @@
         app:srcCompat="@mipmap/grey_line" />
 
     <TextView
+        android:id="@+id/textView56"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="扣除: 中華航空: 3000 pt\n扣除: 遠傳電信: 1000 pt"
+        android:text="扣除: 中華航空: \n扣除: 遠傳電信: "
         android:textColor="#000033"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.395"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251" />
+        app:layout_constraintVertical_bias="0.238" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -326,5 +327,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.654" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="80dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:gravity="left|center_vertical"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toEndOf="@+id/textView56"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="80dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:gravity="left|center_vertical"
+        android:textColor="#000033"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toEndOf="@+id/textView56"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.227" />
 
 </android.support.constraint.ConstraintLayout>
