@@ -82,9 +82,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.61"
-        app:srcCompat="@mipmap/gps" />
+        app:srcCompat="@mipmap/gps" /><![CDATA[
 
-    <ImageButton
+    ImageButton
         android:id="@+id/beacon"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -96,6 +96,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.363" />
 
+    ]]>
+
     <ImageButton
         android:id="@+id/beacon2"
         android:layout_width="150dp"
@@ -103,10 +105,10 @@
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <ImageButton
         android:id="@+id/beacon3"
