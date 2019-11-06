@@ -434,7 +434,13 @@ public class SwitchPoint extends AppCompatActivity {
         @Override
         public void run() {
             //Toast.makeText(SwitchPoint.this,"撮合成功!", Toast.LENGTH_LONG).show();
-            startActivity (new Intent(SwitchPoint.this, Receipt.class));
+            Bundle bundle = new Bundle();
+            bundle.putString("B",company_name[Comb]);
+            bundle.putString("A",upload_com);
+            bundle.putString("amount",upload_amount);
+            Intent intent = new Intent(SwitchPoint.this,Receipt.class);
+            intent.putExtras(bundle);
+            startActivity (intent);
         }
     };
 
@@ -442,6 +448,7 @@ public class SwitchPoint extends AppCompatActivity {
         public void run() {
 
             try {
+                //webview.loadUrl("javascript:updateMP()");
                 //Log.d("update pt","");
                 URL url = new URL("http://140.113.65.235/getMP.php");
                 // 開始宣告 HTTP 連線需要的物件，這邊通常都是一綑的
@@ -462,7 +469,7 @@ public class SwitchPoint extends AppCompatActivity {
                     InputStream inputStream =
                             connection.getInputStream();
                     // 取得輸入串流
-                    BufferedReader bufReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"), 8);
+                    BufferedReader bufReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
                     // 讀取輸入串流的資料
                     String box = ""; // 宣告存放用字串
                     String line = null; // 宣告讀取用的字串
@@ -471,7 +478,9 @@ public class SwitchPoint extends AppCompatActivity {
                         // 每當讀取出一列，就加到存放字串後面
                     }
                     inputStream.close(); // 關閉輸入串流
+
                     result = box; // 把存放用字串放到全域變數
+                    //System.out.println("RESU:LTTTTTTTTT"+result);
                 }
                 // 讀取輸入串流並存到字串的部分
                 // 取得資料後想用不同的格式
@@ -486,6 +495,7 @@ public class SwitchPoint extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
                     try {
+
                         JSONArray array = new JSONArray(result);
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject jsonObject = array.getJSONObject(i);
