@@ -7,6 +7,7 @@ import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -84,17 +85,10 @@ public class MainActivity extends AppCompatActivity {
                 setCouponDialog3();
             }
         });
-        final ImageView image = new ImageView(this);
-        image.setImageResource(R.mipmap.dialogcoin);
         mShaker = new ShakeListener(this);
         mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
-            public void onShake()
-            {
-                new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog)
-                        .setPositiveButton(android.R.string.ok, null)
-                        .setMessage("您獲得點數10點!")
-                        .setView(image)
-                        .show();
+            public void onShake(){
+                setCouponDialog4();
             }
         });
     }
@@ -104,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         vibrate.vibrate(mVibratePattern,-1);
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
         dialogBuilder.setTitle("提示:")
-                .setMessage("偵測到過大音量")
+                .setMessage("偵測到附近二氧化碳濃度過高\n請盡量避開人潮")
                 .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -132,6 +126,20 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
+        dialogBuilder.show();
+    }
+    private void setCouponDialog4() {
+        ImageView image = new ImageView(this);
+        image.setImageResource(R.mipmap.dialogcoin);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
+        dialogBuilder.setTitle("提示:")
+                .setMessage("恭喜獲得點數 10 點!!")
+                .setPositiveButton("讚啦", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setView(image);
         dialogBuilder.show();
     }
 }

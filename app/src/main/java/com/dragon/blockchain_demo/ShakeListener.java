@@ -5,12 +5,13 @@ import android.hardware.SensorManager;
 import android.content.Context;
 import java.lang.UnsupportedOperationException;
 
-public class ShakeListener implements SensorListener{
-    private static final int FORCE_THRESHOLD = 10000;
+public class ShakeListener implements SensorListener
+{
+    private static final int FORCE_THRESHOLD = 4000;
     private static final int TIME_THRESHOLD = 100;
     private static final int SHAKE_TIMEOUT = 500;
     private static final int SHAKE_DURATION = 1000;
-    private static final int SHAKE_COUNT = 3;
+    private static final int SHAKE_COUNT = 2;
 
     private SensorManager mSensorMgr;
     private float mLastX=-1.0f, mLastY=-1.0f, mLastZ=-1.0f;
@@ -21,7 +22,8 @@ public class ShakeListener implements SensorListener{
     private long mLastShake;
     private long mLastForce;
 
-    public interface OnShakeListener{
+    public interface OnShakeListener
+    {
         public void onShake();
     }
 
